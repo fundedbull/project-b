@@ -23,8 +23,8 @@ const textStyles = cva(`antialiased`, {
     size: {
       small: ["text-sm"],
       base: ["text-base"],
-      large: ["text-large"],
-      extra: ["text-xl"],
+      large: ["text-lg md:text-2xl lg:text-4xl"],
+      extra: ["text-xl md:text-4xl lg:text-7xl"],
     },
   },
   defaultVariants: {
