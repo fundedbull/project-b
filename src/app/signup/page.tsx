@@ -9,7 +9,7 @@ export default function SignUp() {
   return (
     <div className="container mx-auto mb-32 mt-32 flex h-screen flex-col items-center justify-center gap-4 md:mb-0 md:mt-0">
       <Text intent={"heading"} size={"extra"}>
-        Sign up
+        Let&apos;s Create Your Brix
       </Text>
       <form action={formAction} className="flex flex-col gap-2">
         <label className="font-bold" htmlFor="email">
