@@ -12,7 +12,7 @@ export default function SignUp() {
         Let&apos;s Create Your Brix
       </Text>
       <form action={formAction} className="flex flex-col gap-2">
-        <label className="font-bold" htmlFor="email">
+        <label className="font-bold text-primary-400" htmlFor="email">
           <Text intent={"heading"}>Email</Text>
         </label>
         <input
@@ -22,7 +22,7 @@ export default function SignUp() {
           id="email"
           required
         />
-        <label className="font-bold" htmlFor="username">
+        <label className="font-bold text-primary-400" htmlFor="username">
           <Text intent={"heading"}>Name</Text>
         </label>
         <input
@@ -31,7 +31,7 @@ export default function SignUp() {
           id="username"
           required
         />
-        <label className="font-bold" htmlFor="password">
+        <label className="font-bold text-primary-400" htmlFor="password">
           <Text intent={"heading"}>Password</Text>
         </label>
         <input
@@ -45,7 +45,7 @@ export default function SignUp() {
           <div className="flex gap-1 items-baseline">
             <input type="checkbox" id="tos" name="tos" required />
             <label
-              className="text-wrap px-1 text-lg font-semibold text-neutral-300"
+              className="text-wrap px-1 text-lg font-semibold text-primary-400"
               htmlFor="tos"
             >
               <Text>
@@ -76,20 +76,25 @@ export default function SignUp() {
 
           <div className="flex gap-1">
             <input type="checkbox" id="me" name="me" required />
-            <label className="font-semibold text-neutral-300" htmlFor="me">
+            <label className="font-semibold text-primary-400" htmlFor="me">
               <Text>I consent to receive marketing emails.</Text>
             </label>
           </div>
         </div>
-        <button type="submit">
-          <Text intent={"ui"} size="large">
-            Create Account
-          </Text>
+        <button
+          type="submit"
+          className="relative h-full p-1 transition duration-300 ease-in-out before:absolute before:-inset-0 before:block before:rounded-full before:bg-gradient-to-r before:from-primary-500 before:to-secondary-500 hover:scale-105 hover:cursor-pointer"
+        >
+          <div className="relative rounded-full bg-neutral-800 px-2 py-1 text-center font-bold">
+            <Text intent={"ui"} size="large">
+              Signup
+            </Text>
+          </div>
         </button>
 
         <div className="flex flex-row justify-between">
           <Text>Already have an account?</Text>
-          <Link className="text-lg text-secondary-200 underline" href="/login">
+          <Link className="text-lg text-secondary-400 underline" href="/login">
             <Text>Login</Text>
           </Link>
         </div>
