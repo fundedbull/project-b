@@ -2,7 +2,7 @@ import { cva, VariantProps } from "class-variance-authority";
 import React from "react";
 
 const cardStyles = cva(
-  `flex flex-col bg-secondary-500 gap-2 text-secondary-600 p-6  rounded-xl`,
+  `flex flex-col bg-secondary-500 gap-2 text-secondary-600 p-6 rounded-xl`,
   {
     variants: {
       intent: {
