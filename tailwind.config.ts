@@ -8,7 +8,16 @@ export default {
   ],
   theme: {
     extend: {
+      keyframes: {
+        fadeInOut: {
+          "0%, 100%": { opacity: "0%" },
+          "50%": { opacity: "100%" },
+        },
+      },
       colors: {
+        background: "#090912",
+        blue: "#4DA6FF",
+        orange: "#FF990A",
         neutral: {
           100: "#ffffff",
           200: "#f5f4fa",

@@ -1,37 +1,121 @@
 import Link from "next/link";
 import Image from "next/image";
 import brix_logo from "/public/brix_logo.png";
-import { Text } from "./Text";
 
-export function Navbar() {
+import { JetBrains_Mono } from "next/font/google";
+
+const jb_mono = JetBrains_Mono({
+  subsets: ["latin"],
+});
+
+const Navbar = () => {
   return (
-    <nav className="bg-neutral-800 p-4 w-full border-[1rem] border-neutral-500 rounded-full">
+    <nav
+      className={`${jb_mono.className} bg-background text-white px-6 py-3 flex items-center justify-between`}
+    >
+      {/* Logo */}
+      <div className="flex items-center">
+        <Image src={brix_logo} alt="Brix Logo" width={42} height={42} />
+        <span className="text-2xl font-bold ml-2">BRIX</span>
+      </div>
+
+      {/* Navigation Links */}
+      <div className="flex ">
+        <NavItem href="/pricing" label="PRICING" />
+        <div className="-translate-x-1">
+          <NavItem href="/community" label="COMMUNITY" isLogin />
+        </div>
+        <div className="-translate-x-1">
+          <NavItem href="/build" label="BUILD A BRIX" />
+        </div>
+        <div className="-translate-x-1">
+          <NavLastItem href="/login" label="LOGIN" isLogin />
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+interface NavItemProps {
+  href: string;
+  label: string;
+  isLogin?: boolean;
+  className?: string;
+}
+
+const NavItem: React.FC<NavItemProps> = ({
+  href,
+  label,
+  isLogin = false,
+  className = "",
+}) => {
+  return (
+    <Link href={href} className={`relative block ${className} text-2xl`}>
+      <span
+        className={`relative px-6 py-4 font-bold text-black block 
+          before:content-[''] before:absolute before:inset-0 before:-skew-x-12
+          before:bg-gray-300 before:transition before:duration-300 
+          before:hover:bg-gray-500 
+          ${isLogin ? "before:bg-gray-400 before:hover:bg-gray-500" : ""}`}
+      >
+        <span className="relative z-10">{label}</span>
+      </span>
+    </Link>
+  );
+};
+
+const NavLastItem: React.FC<NavItemProps> = ({
+  href,
+  label,
+  isLogin = false,
+  className = "",
+}) => {
+  return (
+    <Link href={href} className={`relative block ${className} text-2xl`}>
+      <span
+        className={`relative px-6 py-4 font-bold text-black block before:rounded-r-full
+          before:content-[''] before:absolute before:inset-0 before:-skew-x-12
+          before:bg-gray-300 before:transition before:duration-300 
+          before:hover:bg-gray-500 
+          ${isLogin ? "before:bg-orange before:hover:bg-yellow-400" : ""}`}
+      >
+        <span className="relative z-10">{label}</span>
+      </span>
+    </Link>
+  );
+};
+
+export default Navbar;
+
+/**
+ * 
+ * <nav className="bg-[#1d1d1d] p-4 w-full border-[1rem] border-b-[2rem] border-neutral-500 rounded-full uppercase">
       <ul className="flex flex-row gap-4 h-full text-center">
         <li className="flex items-center justify-center w-full">
           <Link href="/">
             <Image src={brix_logo} width={64} height={64} alt="brand logo" />
           </Link>
         </li>
-        <li className="text-nowrap w-full bg-neutral-400 translate-x-[4.5rem] -skew-x-12 py-4 rounded">
+        <li className="text-nowrap w-full bg-[#a2afb5] translate-x-[4.5rem] -skew-x-12 py-4 rounded">
           <Link href="/">
             <Text intent={"heading"} size="large">
               Pricing
             </Text>
           </Link>
         </li>
-        <li className="text-nowrap w-full bg-neutral-500 translate-x-12 -skew-x-12 py-4 rounded">
+        <li className="text-nowrap w-full bg-[#585b65] translate-x-12 -skew-x-12 py-4 rounded">
           <Text intent={"heading"} size="large">
             <Link href="/">Reviews</Link>
           </Text>
         </li>
-        <li className="text-nowrap w-full bg-neutral-600 translate-x-6 -skew-x-12 py-4 rounded">
+        <li className="text-nowrap w-full bg-[#070f28] translate-x-6 -skew-x-12 py-4 rounded">
           <Link href="/">
             <Text intent={"heading"} size="large">
               Build a Brix
             </Text>
           </Link>
         </li>
-        <li className="text-nowrap w-full bg-neutral-700 py-4 -skew-x-12 rounded-l rounded-r-full">
+        <li className="text-nowrap w-full bg-[#a2afb5] py-4 -skew-x-12 rounded-l rounded-r-full">
           <Link href="/">
             <Text intent={"heading"} size="large">
               Login
@@ -40,5 +124,5 @@ export function Navbar() {
         </li>
       </ul>
     </nav>
-  );
-}
+ * 
+ */
