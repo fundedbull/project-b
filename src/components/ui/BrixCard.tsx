@@ -52,11 +52,15 @@ export function BrixCard({
           <Image src={brix_logo} width={20} height={20} alt={"logo"} />
         </div>
 
-        <div className={boosted_member ? "btn-primary" : ""}>
+        <div
+          className={
+            boosted_member
+              ? "btn-primary"
+              : "border border-[#ffffffa0] rounded w-fit text-orange"
+          }
+        >
           <p
-            className={`relative z-10  font-bold text-sm  w-36 py-1 rounded-full ${
-              boosted_member ? "bg-background" : "bg-[#677A87]"
-            } text-center uppercase`}
+            className={`relative z-10  font-bold text-sm  w-36 py-1 rounded-full bg-background text-center uppercase`}
           >
             ${price} / {rate}
           </p>
@@ -80,7 +84,7 @@ export function BrixCard({
           </p>
           <div className="flex">
             {[1, 2, 3, 4, 5].map((v) => (
-              <StarIcon key={v} className="size-6 fill-secondary-400" />
+              <StarIcon key={v} className="size-6 fill-orange" />
             ))}
           </div>
         </div>
