@@ -43,6 +43,9 @@ interface NavItemProps {
   className?: string;
 }
 
+/*
+  Made different components for the nav bar items
+*/
 const NavFirstItem: React.FC<NavItemProps> = ({
   href,
   label,
