@@ -20,15 +20,15 @@ const Navbar = () => {
       </div>
 
       {/* Navigation Links */}
-      <div className="flex ">
-        <NavItem href="/pricing" label="PRICING" />
-        <div className="-translate-x-1">
-          <NavItem href="/community" label="COMMUNITY" isLogin />
+      <div className="flex gap-1 items-center">
+        <NavFirstItem href="/pricing" label="PRICING" />
+        <div className="">
+          <NavSecItem href="/community" label="COMMUNITY" isLogin/>
         </div>
-        <div className="-translate-x-1">
-          <NavItem href="/build" label="BUILD A BRIX" />
+        <div className="">
+          <NavThirdItem href="/build" label="BUILD A BRIX" />
         </div>
-        <div className="-translate-x-1">
+        <div className="">
           <NavLastItem href="/login" label="LOGIN" isLogin />
         </div>
       </div>
@@ -43,7 +43,10 @@ interface NavItemProps {
   className?: string;
 }
 
-const NavItem: React.FC<NavItemProps> = ({
+/*
+  Made different components for the nav bar items
+*/
+const NavFirstItem: React.FC<NavItemProps> = ({
   href,
   label,
   isLogin = false,
@@ -54,10 +57,55 @@ const NavItem: React.FC<NavItemProps> = ({
       <span
         className={`relative px-6 py-4 font-bold text-black block 
           before:content-[''] before:absolute before:inset-0 before:-skew-x-12
-          before:bg-gray-300 before:transition before:duration-300 
+          before:bg-white before:transition before:duration-300 
           before:hover:bg-gray-500 
-          ${isLogin ? "before:bg-gray-400 before:hover:bg-gray-500" : ""}`}
+          ${isLogin ? "before:bg-[#F8F8F8] before:hover:bg-gray-500" : ""}`}
       >
+        {/* #EAEAEA */}
+        <span className="relative z-10">{label}</span>
+      </span>
+    </Link>
+  );
+};
+
+const NavSecItem: React.FC<NavItemProps> = ({
+  href,
+  label,
+  isLogin = false,
+  className = "",
+}) => {
+  return (
+    <Link href={href} className={`relative block ${className} text-2xl`}>
+      <span
+        className={`relative px-6 py-4 font-bold text-black block 
+          before:content-[''] before:absolute before:inset-0 before:-skew-x-12
+          before:bg-[#F4E1C1] before:transition before:duration-300 
+          before:hover:bg-gray-500 
+          ${isLogin ? "before:bg-[#F8F8F8] before:hover:bg-gray-500" : ""}`}
+      >
+        {/* #EAEAEA */}
+        <span className="relative z-10">{label}</span>
+      </span>
+    </Link>
+  );
+};
+
+const NavThirdItem: React.FC<NavItemProps> = ({
+  href,
+  label,
+  isLogin = false,
+  className = "",
+}) => {
+  return (
+    <Link href={href} className={`relative block ${className} text-2xl`}>
+      <span
+        className={`relative px-6 py-4 font-bold text-black block 
+          before:content-[''] before:absolute before:inset-0 before:-skew-x-12
+          before:bg-white before:transition before:duration-300 
+          before:hover:bg-gray-500 
+          ${isLogin ? "before:bg-[#F8F8F8] before:hover:bg-gray-500" : ""}`}
+      >
+        {/* #EAEAEA */}
         <span className="relative z-10">{label}</span>
       </span>
     </Link>
@@ -73,13 +121,14 @@ const NavLastItem: React.FC<NavItemProps> = ({
   return (
     <Link href={href} className={`relative block ${className} text-2xl`}>
       <span
-        className={`relative px-6 py-4 font-bold text-black block before:rounded-r-full
-          before:content-[''] before:absolute before:inset-0 before:-skew-x-12
-          before:bg-gray-300 before:transition before:duration-300 
-          before:hover:bg-gray-500 
+        className={`relative px-6 py-[14px] font-bold text-[#0ef] block before:rounded-r-full
+          before:content-[''] before:absolute before:inset-0 -skew-x-12
+          before:bg-neutral-800 before:transition before:duration-300 
+          before:hover:bg-white border-2 rounded-r-full border-[#0ef] hover:text-black
           ${isLogin ? "before:bg-orange before:hover:bg-yellow-400" : ""}`}
       >
         <span className="relative z-10">{label}</span>
+        {/* bg-neutral-800 */}
       </span>
     </Link>
   );
