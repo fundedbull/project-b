@@ -24,7 +24,7 @@ export default function Footerbar() {
               </a>
             </li> */}
             <li className="pb-2">
-              <a href="/services" className="hover:text-orange">
+              <a href="/pricing" className="hover:text-orange">
                 PRICING
               </a>
             </li>
@@ -34,7 +34,7 @@ export default function Footerbar() {
               </a>
             </li>
             <li className="pb-2">
-              <a href="/contact" className="hover:text-orange">
+              <a href="/reviews" className="hover:text-orange">
                 REVIEWS
               </a>
             </li>
@@ -46,12 +46,12 @@ export default function Footerbar() {
           </h1>
           <ul className="pt-8 md:pt-4">
             <li className="pb-2">
-              <Link href="/tos" className="hover:text-orange">
+              <Link href="/terms-of-service" className="hover:text-orange">
                 TERMS OF SERVICE
               </Link>
             </li>
             <li className="pb-2">
-              <Link href="/privacy" className="hover:text-orange">
+              <Link href="/privacy-policy" className="hover:text-orange">
                 PRIVACY POLICY
               </Link>
             </li>
