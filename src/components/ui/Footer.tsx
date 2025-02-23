@@ -46,12 +46,12 @@ export default function Footerbar() {
           </h1>
           <ul className="pt-8 md:pt-4">
             <li className="pb-2">
-              <Link href="/tos" className="hover:text-pink-500">
+              <Link href="/tos" className="hover:text-orange">
                 TERMS OF SERVICE
               </Link>
             </li>
             <li className="pb-2">
-              <Link href="/privacy" className="hover:text-pink-500">
+              <Link href="/privacy" className="hover:text-orange">
                 PRIVACY POLICY
               </Link>
             </li>
@@ -61,12 +61,12 @@ export default function Footerbar() {
               </Link>
             </li> */}
             <li className="pb-2">
-              <Link href="/disclaimer" className="hover:text-pink-500">
+              <Link href="/disclaimer" className="hover:text-orange">
                 DISCLAIMER
               </Link>
             </li>
             <li className="pb-2">
-              <Link href="/refund-policy" className="hover:text-pink-500">
+              <Link href="/refund-policy" className="hover:text-orange">
                 refund policy
               </Link>
             </li>
