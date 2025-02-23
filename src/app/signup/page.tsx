@@ -1,109 +1,123 @@
-"use client";
-import { Text } from "@ui/Text";
 import Link from "next/link";
-import { useActionState } from "react";
-import { signUp } from "@/app/lib/action";
+import Image from "next/image";
+import logo from "/public/brix_logo.png";
+import { JetBrains_Mono, Inter } from "next/font/google";
+const jb_mono = JetBrains_Mono({
+  subsets: ["latin"],
+});
 
-export default function SignUp() {
-  const [message, formAction] = useActionState(signUp, undefined);
+const inter = Inter({
+  subsets: ["latin"],
+});
+
+export default async function Login() {
   return (
-    <div className="container mx-auto mb-32 mt-32 flex h-screen flex-col items-center justify-center gap-4 md:mb-0 md:mt-0">
-      <Text intent={"heading"} size={"extra"}>
-        Let&apos;s Create Your Brix
-      </Text>
-      <form action={formAction} className="flex flex-col gap-2">
-        <label className="font-bold" htmlFor="email">
-          <Text intent={"heading"}>Email</Text>
-        </label>
-        <input
-          className="w-72 px-2 py-2"
-          type="email"
-          name="email"
-          id="email"
-          required
-        />
-        <label className="font-bold" htmlFor="username">
-          <Text intent={"heading"}>Name</Text>
-        </label>
-        <input
-          className="w-72 px-2 py-2"
-          name="username"
-          id="username"
-          required
-        />
-        <label className="font-bold" htmlFor="password">
-          <Text intent={"heading"}>Password</Text>
-        </label>
-        <input
-          className="w-72 px-2 py-2"
-          type="password"
-          name="password"
-          id="password"
-          required
-        />
-        <div className="flex flex-col gap-4 max-w-72">
-          <div className="flex gap-1 items-baseline">
-            <input type="checkbox" id="tos" name="tos" required />
+    <div
+      className={`${inter.className} min-w-screen min-h-screen flex items-center justify-center`}
+    >
+      <div className="container mx-auto mb-32 mt-32 flex h-screen flex-col items-center justify-center gap-4 md:mb-0 md:mt-0">
+        <h1 className={`${jb_mono.className} text-5xl font-bold text-blue`}>
+          Sign up
+        </h1>
+
+        <form method="post" className="flex flex-col gap-2">
+          <label
+            className={`${jb_mono.className} px-1 text-lg font-bold text-blue`}
+            htmlFor="email"
+          >
+            Email
+          </label>
+          <input
+            className="w-72 px-2 py-2"
+            type="email"
+            name="email"
+            id="email"
+            required
+          />
+
+          <label
+            className={`${jb_mono.className} px-1 text-lg font-bold text-blue`}
+            htmlFor="name"
+          >
+            Name
+          </label>
+          <input
+            className="w-72 px-2 py-2"
+            type="text"
+            name="name"
+            id="name"
+            required
+          />
+
+          <label
+            className={`${jb_mono.className} px-1 text-lg font-bold text-blue`}
+            htmlFor="password"
+          >
+            Password
+          </label>
+          <input
+            className="w-72 px-2 py-2"
+            type="password"
+            name="password"
+            id="password"
+            required
+          />
+
+          <div className="max-w-72">
+            <input type="checkbox" id="tos" name="tos" value="tos" required />
             <label
-              className="text-wrap px-1 text-lg font-semibold text-neutral-300"
+              className={`text-wrap px-1 text-lg font-semibold text-neutral-300`}
               htmlFor="tos"
             >
-              <Text>
-                By creating an account, I agree to this website&#39;s{" "}
-                <a
-                  href="/privacy"
-                  className="text-white underline hover:text-secondary-100"
-                >
-                  privacy policy
-                </a>
-                ,{" "}
-                <a
-                  className="text-white underline hover:text-secondary-100"
-                  href="/tos"
-                >
-                  terms of service
-                </a>
-                , and{" "}
-                <a
-                  className="text-white underline hover:text-secondary-100"
-                  href="/disclaimer"
-                >
-                  disclaimer
-                </a>
-              </Text>
+              By creating an account, I agree to this website&#39;s{" "}
+              <a
+                href="/privacy"
+                className="text-white underline hover:text-blue"
+              >
+                privacy policy
+              </a>
+              ,{" "}
+              <a className="text-white underline hover:text-blue" href="/tos">
+                terms of service
+              </a>
+              , and{" "}
+              <a
+                className="text-white underline hover:text-blue"
+                href="/disclaimer"
+              >
+                disclaimer
+              </a>
             </label>
+            <br />
+
+            <input type="checkbox" id="me" name="me" value="me" required />
+            <label
+              className={`${jb_mono.className} text-wrap px-1 text-lg font-semibold text-neutral-300`}
+              htmlFor="me"
+            >
+              I consent to receive marketing emails.
+            </label>
+            <br />
           </div>
 
-          <div className="flex gap-1">
-            <input type="checkbox" id="me" name="me" required />
-            <label className="font-semibold text-neutral-300" htmlFor="me">
-              <Text>I consent to receive marketing emails.</Text>
-            </label>
-          </div>
-        </div>
-        <button type="submit">
-          <Text intent={"ui"} size="large">
-            Create Account
-          </Text>
-        </button>
+          <button
+            className={`${jb_mono.className} bg-orange px-4 py-3 text-lg font-semibold text-white`}
+            type="submit"
+          >
+            Sign Up
+          </button>
 
-        <div className="flex flex-row justify-between">
-          <Text>Already have an account?</Text>
-          <Link className="text-lg text-secondary-200 underline" href="/login">
-            <Text>Login</Text>
-          </Link>
-        </div>
-      </form>
-      <div
-        className="flex h-8 items-end space-x-1"
-        aria-live="polite"
-        aria-atomic="true"
-      >
-        {message && (
-          <>
-            <Text intent={"ui"}>{message}</Text>
-          </>
-        )}
+          <div className="flex flex-row justify-between">
+            <p className={` text-lg text-blue`}>Already have an account?</p>
+            <Link className={` text-lg text-blue underline`} href="/login">
+              Login
+            </Link>
+          </div>
+        </form>
+
+        <Link href="/">
+          <Image src={logo} alt="Funded Bull Logo" width={150} height={150} />
+        </Link>
       </div>
     </div>
   );
