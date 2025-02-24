@@ -16,7 +16,6 @@ import Link from "next/link";
 import { JetBrains_Mono, Inter } from "next/font/google";
 import { BrixCard } from "@ui/BrixCard";
 import Navbar from "@ui/Navbar";
-import Pagination from "@ui/Pagination";
 import Footer from "@ui/Footer";
 
 const jb_mono = JetBrains_Mono({
