@@ -336,10 +336,6 @@ export default function Home() {
               ) : null
             )}
           </div>
-
-          <div className="self-center mt-4">
-            <Pagination totalPages={10} currentPage={1} />
-          </div>
         </div>
       </div>
       <Footer />
