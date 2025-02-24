@@ -23,7 +23,7 @@ const Navbar = () => {
       <div className="flex gap-1 items-center">
         <NavFirstItem href="/pricing" label="PRICING" />
         <div className="">
-          <NavSecItem href="/community" label="COMMUNITY" isLogin/>
+          <NavSecItem href="/community" label="COMMUNITY" isLogin />
         </div>
         <div className="">
           <NavThirdItem href="/build" label="BUILD A BRIX" />
@@ -125,7 +125,7 @@ const NavLastItem: React.FC<NavItemProps> = ({
           before:content-[''] before:absolute before:inset-0 -skew-x-12
           before:bg-neutral-800 before:transition before:duration-300 
           before:hover:bg-white border-2 rounded-r-full border-[#0ef] hover:text-black
-          ${isLogin ? "before:bg-orange before:hover:bg-yellow-400" : ""}`}
+          ${isLogin ? "before:bg-background before:hover:bg-white" : ""}`}
       >
         <span className="relative z-10">{label}</span>
         {/* bg-neutral-800 */}
