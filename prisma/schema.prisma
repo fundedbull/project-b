@@ -23,3 +23,11 @@ model Waitlist {
   id    String @id @default(auto()) @map("_id") @db.ObjectId
   email String @unique
 }
+
+model InvestorInqury {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  name   String
+  email  String
+  phone  String
+  amount String
+}

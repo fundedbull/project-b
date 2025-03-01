@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, ReactNode } from "react";
+import { useState, useEffect, ReactNode, useActionState } from "react";
 import {
   BookmarkIcon,
   ChatBubbleLeftRightIcon,
@@ -15,6 +15,7 @@ import {
 import Navbar from "@ui/Navbar";
 import { JetBrains_Mono, Inter } from "next/font/google";
 import Link from "next/link";
+import { joinWaitlist, submitInvestorInquiry } from "../action";
 
 const jb_mono = JetBrains_Mono({ subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
@@ -37,7 +38,8 @@ const Popup: React.FC<PopupProps> = ({ isOpen, onClose, title, children }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-50">
-      <div className="bg-background p-6 rounded-lg shadow-lg text-center relative w-96">
+      <div className="bg-background border-blue border-2 p-6 rounded-lg shadow-lg text-center relative w-96">
+        <div className="bg-gradient-to-r from-blue to-orange size-32 inset-0  -z-10  blur h-full w-96 absolute" />
         <h2 className="text-2xl font-bold mb-4">{title}</h2>
         {children}
         <button
@@ -55,6 +57,15 @@ export default function WaitList() {
   const [waitlistOpen, setWaitlistOpen] = useState(false);
   const [investorOpen, setInvestorOpen] = useState(false);
   const [careersOpen, setCareersOpen] = useState(false);
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [_, waitAction, isWaitPending] = useActionState(joinWaitlist, null);
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [_state, investorAction, isInvestorPending] = useActionState(
+    submitInvestorInquiry,
+    null
+  );
 
   return (
     <main className="min-w-screen min-h-screen flex flex-col gap-4 uppercase">
@@ -124,7 +135,9 @@ export default function WaitList() {
               BRIX is currently under construction
             </h1>
             <h1 className={`${jb_mono.className} text-4xl md:text-6xl`}>
-              Join our waitlist for early access
+              <span className="bg-gradient-to-r from-primary-400 via-secondary-200 via-50% to-secondary-600 bg-clip-text text-transparent">
+                Join our waitlist for early access
+              </span>
             </h1>
           </div>
 
@@ -156,12 +169,21 @@ export default function WaitList() {
             ></iframe>
           </div>
 
-          <p className={`${inter.className} text-2xl  text-center`}>
-            If you want to become an investor or join the team
-          </p>
+          <div className="space-y-4">
+            <p className={`${inter.className} text-2xl  text-center`}>
+              If you want to become an{" "}
+              <span className="bg-gradient-to-r from-primary-400 via-secondary-200 via-50% to-secondary-600 bg-clip-text text-transparent">
+                investor or join the team
+              </span>
+            </p>
+
+            <p className={`${inter.className} text-base  text-center`}>
+              Click below to get started.
+            </p>
+          </div>
 
           {/* Investor & Careers Buttons */}
-          <div className="flex flex-col md:flex-row gap-4 ">
+          <div className="flex flex-col md:flex-row gap-4 pb-10">
             <button
               onClick={() => setInvestorOpen(true)}
               className={`${jb_mono.className} uppercase px-2 p-1 w-64 rounded-full border-orange border-2 bg-background text-2xl relative before:rounded-full before:absolute before:bg-gradient-to-tr before:to-blue before:from-orange before:inset-0 before:blur before:-z-10`}
@@ -185,15 +207,19 @@ export default function WaitList() {
             <p className="text-lg mb-4">
               Enter your email to get early access perks.
             </p>
-            <form>
+            <form action={waitAction}>
               <input
                 type="email"
+                id="email"
+                name="email"
+                required
                 placeholder="Your email"
-                className="border p-2 rounded w-full mb-4"
+                className="border p-2 rounded w-full mb-4 text-black"
               />
               <button
                 className="bg-blue-500 text-white px-4 py-2 rounded"
-                onClick={() => setWaitlistOpen(false)}
+                type="submit"
+                disabled={isWaitPending}
               >
                 Submit
               </button>
@@ -210,36 +236,31 @@ export default function WaitList() {
             </p>
 
             {/* Form Start */}
-            <form
-              className="flex flex-col gap-4"
-              onSubmit={(e) => {
-                e.preventDefault();
-                // Handle form submission here
-                setInvestorOpen(false);
-              }}
-            >
+            <form className="flex flex-col gap-4" action={investorAction}>
               {/* Name Input */}
               <input
                 type="text"
+                name="name"
                 placeholder="Your Name"
-                className="border p-2 rounded w-full mb-4"
+                className="border p-2 rounded w-full mb-4 text-black"
                 required
               />
 
               {/* Email Input */}
               <input
                 type="email"
+                name="email"
                 placeholder="Your Email"
-                className="border p-2 rounded w-full mb-4"
+                className="border p-2 rounded w-full mb-4 text-black"
                 required
               />
 
               {/* Phone Number Input */}
               <input
                 type="tel"
+                name="phone"
                 placeholder="Your Phone Number"
-                className="border p-2 rounded w-full mb-4"
-                pattern="^\+?[1-9]\d{1,14}$"
+                className="border p-2 rounded w-full mb-4 text-black"
                 title="Please enter a valid phone number"
                 required
               />
@@ -247,8 +268,9 @@ export default function WaitList() {
               {/* Amount to Invest Input */}
               <input
                 type="number"
+                name="amount"
                 placeholder="Amount You Want to Invest"
-                className="border p-2 rounded w-full mb-4"
+                className="border p-2 rounded w-full mb-4 text-black"
                 min="0"
                 step="any"
                 required
@@ -273,12 +295,12 @@ export default function WaitList() {
             <p className="text-lg mb-4">
               Looking for opportunities? Apply now!
             </p>
-            <button
-              className="bg-green-500 text-white px-4 py-2 rounded"
-              onClick={() => setCareersOpen(false)}
+            <Link
+              href={"https://www.linkedin.com/in/michael-rosas-32ba71330/"}
+              className="border border-[#ffffffa0] rounded p-1 text-blue w-full text-center"
             >
               Apply
-            </button>
+            </Link>
           </Popup>
         </article>
       </section>
