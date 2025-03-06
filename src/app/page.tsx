@@ -11,11 +11,11 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <main
-      className={`${jb_mono.className} flex flex-col gap-8 container mx-auto`}
+      className={`${jb_mono.className} flex flex-col gap-4 md:gap-8 container mx-auto`}
     >
       <Navbar />
-      <h1 className="text-6xl w-3/5 uppercase p-4">
-        The all in one stop shop for{" "}
+      <h1 className="text-5xl md:text-6xl md:w-3/5 uppercase p-4">
+        The one stop shop for{" "}
         <span className="bg-gradient-to-r from-primary-400 via-secondary-200 via-50% to-secondary-600 bg-clip-text text-transparent">
           entrepreneurs and creators
         </span>
@@ -30,15 +30,15 @@ export default function Home() {
           Start for free
         </h1>
       </Link>
-      <div className="flex flex-row">
+      <div className="flex gap-8 md:gap-0 flex-col md:flex-row p-4 md:p-0">
         <Image
-          className=" mx-4"
+          className="md:mx-4"
           width={1000}
           height={600}
           src={marketplace}
           alt="marketplace image"
         />
-        <section className="flex flex-col gap-24 text-left w-full h-full">
+        <section className="flex flex-col gap-8 md:gap-24 text-left w-full h-full">
           <article className="border border-white flex flex-col p-2 w-80 relative bg-background before:absolute before:inset-0 before:-z-10 before:bg-gradient-to-r before:from-blue before:to-orange  before:blur">
             <h1 className="px-4 py-2 w-fit h-fit bg-blue text-white font-bold text-2xl">
               1

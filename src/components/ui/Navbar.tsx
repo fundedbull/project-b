@@ -1,38 +1,78 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import brix_logo from "/public/brix_logo.png";
 
 import { JetBrains_Mono } from "next/font/google";
+import { Bars3Icon } from "@heroicons/react/24/solid";
+import { useState } from "react";
 
 const jb_mono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav
-      className={`${jb_mono.className} bg-background text-white px-6 py-3 flex items-center justify-between`}
-    >
-      {/* Logo */}
-      <div className="flex items-center">
-        <Image src={brix_logo} alt="Brix Logo" width={42} height={42} />
-        <span className="text-2xl font-bold ml-2">BRIX</span>
-      </div>
+    <>
+      <nav
+        className={`${jb_mono.className} bg-background text-white px-6 py-3 hidden md:flex items-center justify-between`}
+      >
+        {/* Logo */}
+        <div className="flex items-center">
+          <Image src={brix_logo} alt="Brix Logo" width={42} height={42} />
+          <span className="text-2xl font-bold ml-2">BRIX</span>
+        </div>
 
-      {/* Navigation Links */}
-      <div className="flex gap-1 items-center">
-        <NavFirstItem href="/pricing" label="PRICING" />
-        <div className="">
+        {/* Navigation Links */}
+        <div className="flex gap-1 items-center">
+          <NavFirstItem href="/pricing" label="PRICING" />
+          <div className="">
+            <NavSecItem href="/community" label="COMMUNITY" isLogin />
+          </div>
+          <div className="">
+            <NavThirdItem href="/build" label="BUILD A BRIX" />
+          </div>
+          <div className="">
+            <NavLastItem href="/login" label="LOGIN" isLogin />
+          </div>
+        </div>
+      </nav>
+      <nav
+        className={`${
+          jb_mono.className
+        } md:hidden bg-background p-4 space-y-4 ${
+          isOpen && "absolute inset-0 top-0 z-50 h-full w-screen bg-neutral-950"
+        }`}
+      >
+        <div className="flex justify-between items-center">
+          <div className="flex items-center">
+            <Image src={brix_logo} alt="Brix Logo" width={42} height={42} />
+            <span className="text-2xl font-bold ml-2">BRIX</span>
+          </div>
+
+          <button
+            onClick={() => {
+              setIsOpen(!isOpen);
+            }}
+          >
+            <Bars3Icon className="size-8" />
+          </button>
+        </div>
+
+        <div
+          className={`${
+            isOpen ? "flex" : "hidden"
+          } flex-col gap-4 transition-all ease-in-out duration-300`}
+        >
+          <NavFirstItem href="/pricing" label="PRICING" />
           <NavSecItem href="/community" label="COMMUNITY" isLogin />
-        </div>
-        <div className="">
           <NavThirdItem href="/build" label="BUILD A BRIX" />
-        </div>
-        <div className="">
           <NavLastItem href="/login" label="LOGIN" isLogin />
         </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 };
 
@@ -135,43 +175,3 @@ const NavLastItem: React.FC<NavItemProps> = ({
 };
 
 export default Navbar;
-
-/**
- * 
- * <nav className="bg-[#1d1d1d] p-4 w-full border-[1rem] border-b-[2rem] border-neutral-500 rounded-full uppercase">
-      <ul className="flex flex-row gap-4 h-full text-center">
-        <li className="flex items-center justify-center w-full">
-          <Link href="/">
-            <Image src={brix_logo} width={64} height={64} alt="brand logo" />
-          </Link>
-        </li>
-        <li className="text-nowrap w-full bg-[#a2afb5] translate-x-[4.5rem] -skew-x-12 py-4 rounded">
-          <Link href="/">
-            <Text intent={"heading"} size="large">
-              Pricing
-            </Text>
-          </Link>
-        </li>
-        <li className="text-nowrap w-full bg-[#585b65] translate-x-12 -skew-x-12 py-4 rounded">
-          <Text intent={"heading"} size="large">
-            <Link href="/">Reviews</Link>
-          </Text>
-        </li>
-        <li className="text-nowrap w-full bg-[#070f28] translate-x-6 -skew-x-12 py-4 rounded">
-          <Link href="/">
-            <Text intent={"heading"} size="large">
-              Build a Brix
-            </Text>
-          </Link>
-        </li>
-        <li className="text-nowrap w-full bg-[#a2afb5] py-4 -skew-x-12 rounded-l rounded-r-full">
-          <Link href="/">
-            <Text intent={"heading"} size="large">
-              Login
-            </Text>
-          </Link>
-        </li>
-      </ul>
-    </nav>
- * 
- */
