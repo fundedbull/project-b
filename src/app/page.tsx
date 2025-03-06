@@ -5,6 +5,11 @@ import Footerbar from "@ui/Footer";
 
 import { JetBrains_Mono, Inter } from "next/font/google";
 import Link from "next/link";
+import {
+  BuildingStorefrontIcon,
+  ComputerDesktopIcon,
+  CreditCardIcon,
+} from "@heroicons/react/24/solid";
 const jb_mono = JetBrains_Mono({ subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,24 +45,22 @@ export default function Home() {
         />
         <section className="flex flex-col gap-8 md:gap-24 text-left w-full h-full">
           <article className="border border-white flex flex-col p-2 w-80 relative bg-background before:absolute before:inset-0 before:-z-10 before:bg-gradient-to-r before:from-blue before:to-orange  before:blur">
-            <h1 className="px-4 py-2 w-fit h-fit bg-blue text-white font-bold text-2xl">
-              1
-            </h1>
-            <p className={`${inter.className} text-2xl`}>Set Up A Store Page</p>
+            <BuildingStorefrontIcon className="size-8 fill-orange" />
+            <p className={`${inter.className} text-2xl py-4`}>
+              Set Up A Store Page
+            </p>
           </article>
           <article className="border border-white flex flex-col p-2 w-80 self-end relative bg-background before:absolute before:inset-0 before:-z-10 before:bg-gradient-to-r before:from-blue before:to-orange  before:blur">
-            <h1 className="px-4 py-2 w-fit h-fit bg-blue text-white font-bold text-2xl">
-              2
-            </h1>
-            <p className={`${inter.className} text-2xl`}>
+            <ComputerDesktopIcon className="size-8 fill-orange" />
+            <p className={`${inter.className} text-2xl  py-4`}>
               List it on our marketplace
             </p>
           </article>
           <article className="border border-white flex flex-col p-2 w-80 relative bg-background before:absolute before:inset-0 before:-z-10 before:bg-gradient-to-r before:from-blue before:to-orange  before:blur">
-            <h1 className="px-4 py-2 w-fit h-fit bg-blue text-white font-bold text-2xl">
-              3
-            </h1>
-            <p className={`${inter.className} text-2xl`}>Accept Payments</p>
+            <CreditCardIcon className="size-8 fill-orange" />
+            <p className={`${inter.className} text-2xl  py-4`}>
+              Accept Payments
+            </p>
           </article>
         </section>
       </div>
