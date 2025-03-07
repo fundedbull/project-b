@@ -20,10 +20,11 @@ const Navbar = () => {
         className={`${jb_mono.className} bg-background text-white px-6 py-3 hidden md:flex items-center justify-between`}
       >
         {/* Logo */}
-        <div className="flex items-center">
+
+        <Link className="flex items-center" href="/">
           <Image src={brix_logo} alt="Brix Logo" width={42} height={42} />
           <span className="text-2xl font-bold ml-2">BRIX</span>
-        </div>
+        </Link>
 
         {/* Navigation Links */}
         <div className="flex gap-1 items-center">
