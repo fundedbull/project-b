@@ -120,7 +120,205 @@ export default function Tos() {
         <h2
           className={`${jetBrainsMono.className} text-2xl font-semibold text-blue mt-6`}
         >
-          5. Contact Information
+          5. Boosted BRIX (Advertising System)
+        </h2>
+        <p className="mb-6">
+          Users can promote their store on the Marketplace with Boosted BRIX:
+        </p>
+        <ul className="list-disc pl-6 mt-2">
+          <li>$8 for 1 day</li>
+          <li>$17 for 3 days</li>
+          <li>$39 for 7 days</li>
+        </ul>
+        <p className="mb-6">
+          Disclaimer: BRIX PAGE does not guarantee increased sales, traffic, or
+          visibility through Boosted BRIX. Performance depends on Marketplace
+          activity and demand.
+        </p>
+
+        <h2
+          className={`${jetBrainsMono.className} text-2xl font-semibold text-blue mt-6`}
+        >
+          6. Networking Feature for Creators
+        </h2>
+        <p className="mb-6">
+          The Networking Feature allows creators to post job requests and
+          connect with other professionals. BRIX PAGE is not responsible for the
+          outcome of collaborations. Users negotiate agreements at their own
+          risk.
+        </p>
+
+        <h2
+          className={`${jetBrainsMono.className} text-2xl font-semibold text-blue mt-6`}
+        >
+          7. Learn Feature (Educational Content)
+        </h2>
+        <p className="mb-6">
+          BRIX PAGE offers courses, guides, videos, tutorials, and eBooks.
+          Educational content is opinion-based and does not guarantee financial
+          success or business growth.
+        </p>
+
+        <h2
+          className={`${jetBrainsMono.className} text-2xl font-semibold text-blue mt-6`}
+        >
+          8. Dashboard & User Analytics
+        </h2>
+        <p className="mb-6">
+          Users are responsible for monitoring their own transaction data. BRIX
+          PAGE does not provide financial or tax advice based on analytics data.
+        </p>
+
+        <h2
+          className={`${jetBrainsMono.className} text-2xl font-semibold text-blue mt-6`}
+        >
+          9. Payment Terms & Tax Compliance
+        </h2>
+        <p className="mb-6">
+          Payments may be held in escrow until conditions are met. Sellers are
+          responsible for collecting and remitting applicable sales taxes.
+          Unauthorized chargebacks may result in account suspension. Accepted
+          payment methods: Visa, Mastercard, Square, Stripe, PayPal.
+        </p>
+
+        <h2
+          className={`${jetBrainsMono.className} text-2xl font-semibold text-blue mt-6`}
+        >
+          10. Third-Party Integrations & Liability
+        </h2>
+        <p className="mb-6">
+          BRIX PAGE integrates with third-party payment processors and social
+          media platforms. We are not responsible for user activities on these
+          third-party platforms.
+        </p>
+
+        <h2
+          className={`${jetBrainsMono.className} text-2xl font-semibold text-blue mt-6`}
+        >
+          11. Appeal Process
+        </h2>
+        <p className="mb-6">
+          Users may appeal decisions within 14 to 30 days by providing detailed
+          evidence (e.g., screenshots, documents, bank statements, chats). All
+          disputes will be handled by National Arbitration and Mediation (NAM).
+        </p>
+
+        <h2
+          className={`${jetBrainsMono.className} text-2xl font-semibold text-blue mt-6`}
+        >
+          12. Liability Disclaimer
+        </h2>
+        <p className="mb-6">
+          BRIX PAGE is not liable for indirect damages, loss of business, or
+          personal disputes between users.
+        </p>
+
+        <h2
+          className={`${jetBrainsMono.className} text-2xl font-semibold text-blue mt-6`}
+        >
+          13. Account Termination & Data Deletion
+        </h2>
+        <p className="mb-6">
+          BRIX PAGE may terminate accounts for violating these Terms. Users may
+          request data deletion by submitting a written request. Upon account
+          deletion, all user data will be permanently removed within 168
+          business hours.
+        </p>
+
+        <h2
+          className={`${jetBrainsMono.className} text-2xl font-semibold text-blue mt-6`}
+        >
+          14. Service Disruptions & Billing Errors
+        </h2>
+        <p className="mb-6">
+          No refunds will be issued for service disruptions, billing errors, or
+          mistaken purchases.
+        </p>
+
+        <h2
+          className={`${jetBrainsMono.className} text-2xl font-semibold text-blue mt-6`}
+        >
+          15. Consumer Protection Compliance
+        </h2>
+        <p className="mb-6">
+          Users must comply with Federal Trade Commission (FTC) guidelines,
+          including disclosing paid promotions or endorsements.
+        </p>
+
+        <h2
+          className={`${jetBrainsMono.className} text-2xl font-semibold text-blue mt-6`}
+        >
+          16. Children&apos;s Online Privacy Protection Act (COPPA) Compliance
+        </h2>
+        <p className="mb-6">
+          BRIX PAGE is not intended for individuals under 13 years old. Users
+          under 18 must have parental or guardian permission.
+        </p>
+
+        <h2
+          className={`${jetBrainsMono.className} text-2xl font-semibold text-blue mt-6`}
+        >
+          17. Data Privacy & Protection (CCPA & GDPR Compliance)
+        </h2>
+        <p className="mb-6">
+          California users may request access to, deletion of, or opt out of the
+          sale of personal data. BRIX PAGE complies with General Data Protection
+          Regulation (GDPR) for EU users.
+        </p>
+
+        <h2
+          className={`${jetBrainsMono.className} text-2xl font-semibold text-blue mt-6`}
+        >
+          18. Digital Millennium Copyright Act (DMCA) Policy
+        </h2>
+        <p className="mb-6">
+          If your copyrighted work has been used without authorization, submit a
+          DMCA takedown request to: support@brixpage.com.
+        </p>
+
+        <h2
+          className={`${jetBrainsMono.className} text-2xl font-semibold text-blue mt-6`}
+        >
+          19. Accessibility (ADA Compliance)
+        </h2>
+        <p className="mb-6">
+          BRIX PAGE is committed to providing an accessible digital environment.
+        </p>
+
+        <h2
+          className={`${jetBrainsMono.className} text-2xl font-semibold text-blue mt-6`}
+        >
+          20. Dispute Resolution & Arbitration Clause
+        </h2>
+        <p className="mb-6">
+          Disputes will be resolved through binding arbitration in [State of
+          Business Registration]. Users waive their right to a jury trial or
+          class action lawsuit.
+        </p>
+
+        <h2
+          className={`${jetBrainsMono.className} text-2xl font-semibold text-blue mt-6`}
+        >
+          21. Modifications to Terms
+        </h2>
+        <p className="mb-6">
+          BRIX PAGE may update these Terms at any time. Continued use of the
+          Service after updates constitutes acceptance of the revised Terms.
+        </p>
+
+        <h2
+          className={`${jetBrainsMono.className} text-2xl font-semibold text-blue mt-6`}
+        >
+          22. Governing Law & Jurisdiction
+        </h2>
+        <p className="mb-6">
+          These Terms are governed by the laws of the State of New York.
+        </p>
+
+        <h2
+          className={`${jetBrainsMono.className} text-2xl font-semibold text-blue mt-6`}
+        >
+          23. Contact Information
         </h2>
         <p className="mb-6">
           Email:{" "}
