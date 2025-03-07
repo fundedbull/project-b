@@ -25,10 +25,11 @@ export default function Tos() {
           Last Updated: March 4, 2025
         </p>
         <p className="mb-6">
-          Welcome to BRIX PAGE LLC ("BRIX PAGE," "we," "us," or "our"). By
-          accessing or using our website (www.brixpage.com) and related services
-          (collectively, the "Service"), you agree to be bound by these Terms of
-          Service ("Terms"). If you do not agree, you must discontinue use of
+          Welcome to BRIX PAGE LLC (&quot;BRIX PAGE,&quot; &quot;we,&quot;
+          &quot;us,&quot; or &quot;our&quot;). By accessing or using our website
+          (www.brixpage.com) and related services (collectively, the
+          &quot;Service&quot;), you agree to be bound by these Terms of Service
+          (&quot;Terms&quot;). If you do not agree, you must discontinue use of
           the Service immediately.
         </p>
 
@@ -40,11 +41,13 @@ export default function Tos() {
         <p className="mb-6">
           BRIX PAGE is a Social Commerce Platform for Entrepreneurs and Creators
           that allows users to:
-          <ul className="list-disc pl-6 mt-2">
-            <li>Set up a Store Page</li>
-            <li>List products on our Marketplace</li>
-            <li>Accept payments</li>
-          </ul>
+        </p>
+        <ul className="list-disc pl-6 mt-2">
+          <li>Set up a Store Page</li>
+          <li>List products on our Marketplace</li>
+          <li>Accept payments</li>
+        </ul>
+        <p className="mb-6">
           BRIX PAGE provides various features tailored to digital entrepreneurs,
           including networking tools, promotional options, and educational
           resources. BRIX PAGE does not directly sell products and is not
@@ -78,21 +81,21 @@ export default function Tos() {
         >
           3. Subscription Plans & Features
         </h2>
+        <p className="mb-6">BRIX PAGE offers three tiers of service:</p>
+        <ul className="list-disc pl-6 mt-2">
+          <li>
+            <strong>Standard (Free):</strong> Basic platform features,
+            marketplace access
+          </li>
+          <li>
+            <strong>Pro ($7.99/month):</strong> Additional tools and features
+          </li>
+          <li>
+            <strong>Pro+ ($14.99/month):</strong> Full feature set, including
+            advanced analytics and automation tools
+          </li>
+        </ul>
         <p className="mb-6">
-          BRIX PAGE offers three tiers of service:
-          <ul className="list-disc pl-6 mt-2">
-            <li>
-              <strong>Standard (Free):</strong> Basic platform features,
-              marketplace access
-            </li>
-            <li>
-              <strong>Pro ($7.99/month):</strong> Additional tools and features
-            </li>
-            <li>
-              <strong>Pro+ ($14.99/month):</strong> Full feature set, including
-              advanced analytics and automation tools
-            </li>
-          </ul>
           <strong>Modification Notice:</strong> BRIX PAGE reserves the right to
           modify these features or pricing at any time.
         </p>
@@ -102,19 +105,17 @@ export default function Tos() {
         >
           4. Points Reward System & Redemptions
         </h2>
+        <p className="mb-6">Users can earn BRIX PAGE Points through:</p>
+        <ul className="list-disc pl-6 mt-2">
+          <li>Spending real money/currency</li>
+          <li>Completing achievements</li>
+          <li>Completing bounties</li>
+        </ul>
         <p className="mb-6">
-          Users can earn BRIX PAGE Points through:
-          <ul className="list-disc pl-6 mt-2">
-            <li>Spending real money/currency</li>
-            <li>Completing achievements</li>
-            <li>Completing bounties</li>
-          </ul>
           Note: Points do not hold real-world monetary value, cannot be
           exchanged for cash, and may expire if unused within a specified
           period.
         </p>
-
-        {/* Add similar sections for the rest of the content */}
 
         <h2
           className={`${jetBrainsMono.className} text-2xl font-semibold text-blue mt-6`}

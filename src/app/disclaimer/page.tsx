@@ -25,10 +25,11 @@ export default function Disclaimer() {
           BRIX PAGE LLC Disclaimer
         </h1>
 
-        <p className=" mb-6">
+        <p className="mb-6">
           The information, products, and services provided by BRIX PAGE LLC
-          (“BRIX PAGE,” “we,” “our,” or “us”) on www.brixpage.com and associated
-          platforms (collectively, the “Service”) are for informational and
+          (&quot;BRIX PAGE,&quot; &quot;we,&quot; &quot;our,&quot; or
+          &quot;us&quot;) on www.brixpage.com and associated platforms
+          (collectively, the &quot;Service&quot;) are for informational and
           commercial purposes only. By using our Service, you acknowledge and
           agree to the following disclaimers:
         </p>
@@ -38,11 +39,12 @@ export default function Disclaimer() {
         >
           No Warranties or Guarantees
         </h2>
-        <p className=" mb-6">
-          BRIX PAGE provides the Service on an “AS IS” and “AS AVAILABLE” basis,
-          without warranties of any kind, express or implied. We do not
-          guarantee the accuracy, completeness, reliability, or availability of
-          any content, products, or services provided through our platform.
+        <p className="mb-6">
+          BRIX PAGE provides the Service on an &quot;AS IS&quot; and &quot;AS
+          AVAILABLE&quot; basis, without warranties of any kind, express or
+          implied. We do not guarantee the accuracy, completeness, reliability,
+          or availability of any content, products, or services provided through
+          our platform.
         </p>
 
         <h2
@@ -50,7 +52,7 @@ export default function Disclaimer() {
         >
           Third-Party Transactions
         </h2>
-        <p className=" mb-6">
+        <p className="mb-6">
           BRIX PAGE acts as a marketplace for digital goods and services but
           does not endorse, verify, or assume liability for any products,
           services, or transactions conducted by third-party sellers. Any
@@ -63,7 +65,7 @@ export default function Disclaimer() {
         >
           Limitation of Liability
         </h2>
-        <p className=" mb-6">
+        <p className="mb-6">
           To the fullest extent permitted by law, BRIX PAGE and its affiliates
           shall not be liable for any direct, indirect, incidental,
           consequential, or punitive damages, including but not limited to loss
@@ -76,7 +78,7 @@ export default function Disclaimer() {
         >
           User Responsibility
         </h2>
-        <p className=" mb-6">
+        <p className="mb-6">
           Users are solely responsible for the content they post, purchase
           decisions, and compliance with applicable laws when using the Service.
           BRIX PAGE does not guarantee the legality, authenticity, or quality of
@@ -88,7 +90,7 @@ export default function Disclaimer() {
         >
           No Professional Advice
         </h2>
-        <p className=" mb-6">
+        <p className="mb-6">
           The content provided through BRIX PAGE is not intended as
           professional, financial, legal, or business advice. Users should seek
           professional guidance before making decisions based on information
@@ -100,7 +102,7 @@ export default function Disclaimer() {
         >
           Changes to the Disclaimer
         </h2>
-        <p className=" mb-6">
+        <p className="mb-6">
           BRIX PAGE reserves the right to modify this Disclaimer at any time
           without prior notice. Continued use of the Service after changes are
           made constitutes acceptance of the updated terms.
@@ -111,7 +113,7 @@ export default function Disclaimer() {
         >
           Refund Eligibility
         </h2>
-        <p className=" mb-6">
+        <p className="mb-6">
           Refunds are only available for certain purchases made to creators on
           BRIX. The eligibility for a refund is determined by the creator.
           Refund requests must be directed to the creator and are subject to
@@ -123,8 +125,8 @@ export default function Disclaimer() {
         >
           Non-Refundable Fees
         </h2>
-        <p className=" mb-6">
-          Unless explicitly stated otherwise in BRIX PAGE LLC’s Terms of
+        <p className="mb-6">
+          Unless explicitly stated otherwise in BRIX PAGE LLC&apos;s Terms of
           Service, all fees associated with purchases on our platform are
           non-refundable. This includes any administrative or processing fees
           that may apply.
@@ -135,7 +137,7 @@ export default function Disclaimer() {
         >
           Refund Requests
         </h2>
-        <p className=" mb-6">
+        <p className="mb-6">
           To request a refund, you must sign in to your BRIX account and follow
           the designated refund process available at brixpage.com/refund. All
           refund requests are subject to review, and submission of your case
@@ -147,12 +149,12 @@ export default function Disclaimer() {
         >
           Dispute Resolution
         </h2>
-        <p className=" mb-6">
-          BRIX PAGE LLC provides a "Dispute Fighter" tool to assist with the
-          resolution of disputes. This tool is designed to streamline the
-          process of uploading legal documents and purchase logs. However, BRIX
-          PAGE LLC does not guarantee the outcome of any disputes and is not
-          responsible for resolving disputes between buyers and creators.
+        <p className="mb-6">
+          BRIX PAGE LLC provides a &quot;Dispute Fighter&quot; tool to assist
+          with the resolution of disputes. This tool is designed to streamline
+          the process of uploading legal documents and purchase logs. However,
+          BRIX PAGE LLC does not guarantee the outcome of any disputes and is
+          not responsible for resolving disputes between buyers and creators.
         </p>
 
         <h2
@@ -160,10 +162,10 @@ export default function Disclaimer() {
         >
           Limitations of Liability
         </h2>
-        <p className=" mb-6">
+        <p className="mb-6">
           BRIX PAGE LLC is not liable for any dissatisfaction or disputes that
-          arise from a creator's product or service. All purchase-related issues
-          must be handled directly with the creator. BRIX PAGE LLC’s
+          arise from a creator&apos;s product or service. All purchase-related
+          issues must be handled directly with the creator. BRIX PAGE LLC&apos;s
           responsibility is limited to providing the platform for these
           transactions and offering dispute resolution tools.
         </p>
