@@ -120,7 +120,7 @@ export default function Tos() {
         <h2
           className={`${jetBrainsMono.className} text-2xl font-semibold text-blue mt-6`}
         >
-          23. Contact Information
+          5. Contact Information
         </h2>
         <p className="mb-6">
           Email:{" "}
