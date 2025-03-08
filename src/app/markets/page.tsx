@@ -5,7 +5,7 @@ import {
 } from "@heroicons/react/24/solid";
 import Footerbar from "@ui/Footer";
 import Navbar from "@ui/Navbar";
-import Sidebar from "@ui/sidebar";
+import Sidebar from "@ui/asidebar";
 import SubNavLink from "@ui/SubNavLinks";
 import { JetBrains_Mono, Inter } from "next/font/google";
 
