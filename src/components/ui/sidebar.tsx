@@ -26,7 +26,6 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export default function Sidebar() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
@@ -39,9 +38,9 @@ export default function Sidebar() {
       <aside
         className={`${jetBrainsMono.className} ${
           isOpen ? "flex md:flex" : "hidden md:flex"
-        } min-h-screen z-40 p-4`}
+        } min-h-screen  z-40 p-4 text-xl font-bold`}
       >
-        <ul className="flex flex-col gap-4">
+        <ul className="flex flex-col gap-8 text-nowrap">
           <li className="flex gap-1 items-center">
             <BookmarkIcon className="size-6" />
             <Link href="/">FAVORITES</Link>
@@ -50,7 +49,7 @@ export default function Sidebar() {
             <ViewfinderCircleIcon className="size-6" />
             <Link href="/">BOUNTIES</Link>
           </li>
-          <li className="flex gap-1 items-center">
+          <li className="flex gap-1 items-center ">
             <TicketIcon className="size-6" />
             <Link href="/">POINTS SHOP</Link>
           </li>
