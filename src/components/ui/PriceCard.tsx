@@ -3,9 +3,6 @@ import Link from "next/link";
 import { FC } from "react";
 import Image from "next/image";
 import brix_logo from "/public/brix_logo.png";
-// eslint-disable-next-line import/no-unresolved
-
-// eslint-disable-next-line import/no-unresolved
 
 interface Props {
   tier: string;

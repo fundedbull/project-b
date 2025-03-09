@@ -1,10 +1,8 @@
 import PriceCard from "../../components/ui/PriceCard";
 import Footer from "../../components/ui/Footer";
 import Navbar from "../../components/ui/Navbar";
-import { Inter } from "next/font/google";
 import { JetBrains_Mono } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
