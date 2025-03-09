@@ -1,17 +1,16 @@
-import Link from "next/link";
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <div>
-      <nav>
-        <Link href={"/pages/community"}>Community</Link> <p>FAQS</p>{" "}
-        <p>Services</p>
+    <main className="min-w-screen min-h-screen grid grid-rows-1 grid-cols-12">
+      <nav className="col-span-1">
+        <h1>Community</h1>
+        <h1>Services</h1>
+        <h1>Feedback</h1>
       </nav>
-      <div>{children}</div>
-    </div>
+      <section className="col-span-full">{children}</section>
+    </main>
   );
 }
