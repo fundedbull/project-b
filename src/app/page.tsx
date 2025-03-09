@@ -3,6 +3,10 @@ import marketplace from "/public/Alpha_Version_Home_Page.png";
 import Image from "next/image";
 import Footerbar from "@ui/Footer";
 
+import grid_svg from "/public/grid.svg";
+import tile_grid_svg from "/public/tile-grid.svg";
+import panels_svg from "/public/panels.svg";
+
 import { JetBrains_Mono, Inter } from "next/font/google";
 import Link from "next/link";
 import {
@@ -45,21 +49,49 @@ export default function Home() {
         />
         <section className="flex flex-col gap-8 md:gap-24 text-left w-full h-full">
           <article className="border border-white flex flex-col p-2 w-80 relative bg-background before:absolute before:inset-0 before:-z-10 before:bg-gradient-to-r before:from-blue before:to-orange  before:blur">
-            <BuildingStorefrontIcon className="size-8 fill-orange" />
-            <p className={`${inter.className} text-2xl py-4`}>
+            <Image
+              src={grid_svg}
+              width={100}
+              height={100}
+              className="size-8"
+              alt="decoration"
+            />
+            <p className={`${inter.className} text-2xl pt-2`}>
               Set Up A Store Page
+            </p>
+            <p className={`${inter.className}`}>
+              Click Build A Brix to get started on making your Brix Page.
             </p>
           </article>
           <article className="border border-white flex flex-col p-2 w-80 self-end relative bg-background before:absolute before:inset-0 before:-z-10 before:bg-gradient-to-r before:from-blue before:to-orange  before:blur">
-            <ComputerDesktopIcon className="size-8 fill-orange" />
-            <p className={`${inter.className} text-2xl  py-4`}>
+            <Image
+              src={tile_grid_svg}
+              width={100}
+              height={100}
+              className="size-8"
+              alt="decoration"
+            />
+            <p className={`${inter.className} text-2xl  pt-4`}>
               List it on our marketplace
+            </p>
+            <p className={`${inter.className}`}>
+              Customize your Brix and list it on our marketplace and start
+              selling.
             </p>
           </article>
           <article className="border border-white flex flex-col p-2 w-80 relative bg-background before:absolute before:inset-0 before:-z-10 before:bg-gradient-to-r before:from-blue before:to-orange  before:blur">
-            <CreditCardIcon className="size-8 fill-orange" />
-            <p className={`${inter.className} text-2xl  py-4`}>
+            <Image
+              src={panels_svg}
+              width={100}
+              height={100}
+              className="size-8"
+              alt="decoration"
+            />
+            <p className={`${inter.className} text-2xl  pt-2`}>
               Accept Payments
+            </p>
+            <p className={`${inter.className}`}>
+              Via PayPal, Square, Stripe, Visa, Mastercard, and Crypto.
             </p>
           </article>
         </section>
