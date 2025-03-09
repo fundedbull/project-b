@@ -9,11 +9,7 @@ import panels_svg from "/public/panels.svg";
 
 import { JetBrains_Mono, Inter } from "next/font/google";
 import Link from "next/link";
-import {
-  BuildingStorefrontIcon,
-  ComputerDesktopIcon,
-  CreditCardIcon,
-} from "@heroicons/react/24/solid";
+
 const jb_mono = JetBrains_Mono({ subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
 
