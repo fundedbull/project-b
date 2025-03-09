@@ -11,6 +11,7 @@ import { JetBrains_Mono, Inter } from "next/font/google";
 
 import brix_logo from "/public/brix_logo.png";
 import Image from "next/image";
+import { Suspense } from "react";
 const categories = ["ALL", "BUSINESS", "FITNESS", "FINANCE", "TECH", "SALES"];
 const subcategories = [
   "most popular",
@@ -197,8 +198,11 @@ export default function Market() {
 
           <nav className="flex flex-row flex-wrap justify-between  *:font-bold">
             {categories.map((V) => (
-              <SubNavLink K={"category"} V={V} key={V} D={"all"} />
+              <Suspense key={V}>
+                <SubNavLink K={"category"} V={V} D={"all"} />
+              </Suspense>
             ))}
+
             <div className="flex flex-row gap-4 text-gray-600 text-xl my-3 items-center px-2 rounded-lg w-full py-1 border border-gray-600">
               <MagnifyingGlassIcon className="size-6" />
               <p>Search here</p>
@@ -292,12 +296,9 @@ export default function Market() {
 
           <nav className="flex flex-row overflow-x-scroll md:overflow-auto gap-4 justify-between  *:font-bold *:bg-background *:border *:border-[#ffffffa0] *:rounded *:text-nowrap *:px-2 *:py-1">
             {subcategories.map((V) => (
-              <SubNavLink
-                K={"subcategories"}
-                V={V}
-                key={V}
-                D={"most popular"}
-              />
+              <Suspense key={V}>
+                <SubNavLink K={"subcategories"} V={V} D={"most popular"} />
+              </Suspense>
             ))}
           </nav>
 
