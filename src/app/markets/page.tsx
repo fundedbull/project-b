@@ -196,18 +196,17 @@ export default function Market() {
             </h1>
           </div>
 
-          <nav className="flex flex-row flex-wrap justify-between  *:font-bold">
+          <nav className="flex flex-row gap-2  justify-between  *:font-bold">
             {categories.map((V) => (
               <Suspense key={V}>
                 <SubNavLink K={"category"} V={V} D={"all"} />
               </Suspense>
             ))}
-
-            <div className="flex flex-row gap-4 text-gray-600 text-xl my-3 items-center px-2 rounded-lg w-full py-1 border border-gray-600">
-              <MagnifyingGlassIcon className="size-6" />
-              <p>Search here</p>
-            </div>
           </nav>
+          <div className="flex flex-row gap-4 text-gray-600 text-xl my-3 items-center px-2 rounded-lg w-full py-1 border border-gray-600">
+            <MagnifyingGlassIcon className="size-6" />
+            <p>Search here</p>
+          </div>
           <div className="flex items-center gap-2">
             <h1 className={`${jb_mono.className} font-bold text-2xl`}>
               BOOSTED BRIX
@@ -221,18 +220,22 @@ export default function Market() {
             />
           </div>
 
-          <div className="grid grid-cols-5 grid-rows-4 gap-y-8 items-center uppercase ">
+          <div className="grid  grid-cols-5 grid-rows-3 md:grid-rows-4 gap-y-8 items-center uppercase ">
             <h1
               className={`${jb_mono.className} font-bold text-xl hidden md:flex md:grid-cols-1`}
             >
               Ranking
             </h1>
             <h1
-              className={`${jb_mono.className} font-bold text-xl col-span-4 md:col-span-2`}
+              className={`${jb_mono.className} font-bold text-xl col-span-4 hidden md:flex md:col-span-2`}
             >
               Brix Page
             </h1>
-            <h1 className={`${jb_mono.className} font-bold text-xl`}>Review</h1>
+            <h1
+              className={`${jb_mono.className} font-bold text-xl hidden md:flex`}
+            >
+              Review
+            </h1>
             <h1
               className={`${jb_mono.className} hidden md:flex font-bold text-xl`}
             >
@@ -315,31 +318,41 @@ export default function Market() {
             />
           </div>
 
-          <div className="grid grid-cols-5 grid-rows-10 gap-y-8 items-center uppercase">
+          <div className="grid  grid-cols-5 grid-rows-3 md:grid-rows-4 gap-y-8 items-center uppercase ">
             <h1
               className={`${jb_mono.className} font-bold text-xl hidden md:flex md:grid-cols-1`}
             >
               Ranking
             </h1>
             <h1
-              className={`${jb_mono.className} font-bold text-xl col-span-4 md:col-span-2`}
+              className={`${jb_mono.className} font-bold text-xl col-span-4 hidden md:flex md:col-span-2`}
             >
               Brix Page
             </h1>
-            <h1 className={`${jb_mono.className} font-bold text-xl`}>Review</h1>
             <h1
-              className={`${jb_mono.className} hidden md:flex font-bold text-xl`}
+              className={`${jb_mono.className} font-bold text-xl hidden md:flex`}
+            >
+              Review
+            </h1>
+            <h1
+              className={`${jb_mono.className} hidden md:flex font-bold text-xl `}
             >
               Created At/HOURS
             </h1>
             {data.map((page) => (
               <>
-                <div className="hidden md:flex md:grid-cols-1">
+                <div className="hidden md:flex md:grid-cols-1 ">
                   <h3>#{page.ranking} Ranked</h3>
                 </div>
                 <div className="col-span-4 md:col-span-2">
                   <div className="flex flex-row gap-2">
-                    <div className="bg-gray-700 rounded-lg size-12 min-w-12" />
+                    <Image
+                      src={brix_logo}
+                      width={250}
+                      height={250}
+                      alt="profile"
+                      className="rounded-lg size-12 min-w-12"
+                    />
                     <div>
                       <h3
                         className={`${jb_mono.className} w-60 truncate md:w-full`}
@@ -352,7 +365,7 @@ export default function Market() {
                           <UserIcon className="size-4" />{" "}
                           <p>{page.total_users} Joined</p>
                         </div>
-                        <button className="border-2 text-xs border-blue rounded py-1 mx-6 w-20 text-center">
+                        <button className="text-xs  py-1 mx-6 w-20 text-center bg-background border border-white rounded-lg relative h-full before:absolute before:inset-0 before:-z-10 before:block before:bg-gradient-to-r before:from-blue before:to-orange before:blur">
                           {page.price}/{page.rate}
                         </button>
                       </div>
