@@ -38,9 +38,9 @@ export default function Sidebar() {
       <aside
         className={`${jetBrainsMono.className} ${
           isOpen ? "flex md:flex" : "hidden md:flex"
-        } min-h-screen  z-40 p-4 text-xl font-bold`}
+        } min-h-screen  z-40 p-4 text-xl font-bold border-r border-white`}
       >
-        <ul className="flex flex-col gap-8 text-nowrap">
+        <ul className="flex flex-col gap-8 text-nowrap md:mt-28">
           <li className="flex gap-1 items-center">
             <BookmarkIcon className="size-6" />
             <Link href="/">FAVORITES</Link>
@@ -78,7 +78,7 @@ export default function Sidebar() {
             <Link href="/">FEEDBACK</Link>
           </li>
           <li
-            className={`flex flex-col gap-1 ${inter.className} text-zinc-400 uppercase text-sm`}
+            className={` mt-auto flex flex-col gap-1 ${inter.className} text-zinc-400 uppercase text-sm`}
           >
             <p>
               Made by <span className="text-orange">creators</span>

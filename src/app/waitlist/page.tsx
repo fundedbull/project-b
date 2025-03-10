@@ -149,25 +149,13 @@ export default function WaitList() {
             Join the Waitlist
           </button>
 
-          <div className="hidden md:block">
-            <iframe
-              width="720"
-              height="560"
-              src="https://www.youtube.com/embed/vm5ESistenc"
-              title="BRIX"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            ></iframe>
-          </div>
-
-          <div className="block md:hidden">
-            <iframe
-              width="360"
-              height="520"
-              src="https://www.youtube.com/embed/vm5ESistenc"
-              title="BRIX"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            ></iframe>
-          </div>
+          <video className="md:mx-4 h-[500px]" controls>
+            <source
+              src="https://ntdvovqz4e.ufs.sh/f/cAY8TOuNYGL6CxlPNVDpMKE93hB45JYuVnQ1ZkoiT7jaUtxA"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
 
           <div className="space-y-4">
             <p className={`${inter.className} text-2xl  text-center`}>
