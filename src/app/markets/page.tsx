@@ -10,6 +10,8 @@ import SubNavLink from "@ui/SubNavLinks";
 import { JetBrains_Mono, Inter } from "next/font/google";
 
 import brix_logo from "/public/brix_logo.png";
+import brtm_logo from "/public/proplocker_logo_8.png";
+import wdw_logo from "/public/WDW.png";
 import Image from "next/image";
 import { Suspense } from "react";
 const categories = ["ALL", "BUSINESS", "FITNESS", "FINANCE", "TECH", "SALES"];
@@ -42,6 +44,7 @@ const boosted = [
     created_at: new Date("2025-01-10T10:00:00Z"),
     total_users: 1200,
     boosted_member: true,
+    img_url: brix_logo,
   },
   {
     author: "Emily Johnson",
@@ -54,6 +57,7 @@ const boosted = [
     created_at: new Date("2025-01-15T14:30:00Z"),
     total_users: 950,
     boosted_member: true,
+    img_url: brtm_logo,
   },
   {
     author: "Michael Brown",
@@ -66,6 +70,7 @@ const boosted = [
     created_at: new Date("2024-12-20T09:45:00Z"),
     total_users: 5000,
     boosted_member: true,
+    img_url: wdw_logo,
   },
 ];
 
@@ -152,10 +157,9 @@ export default function Market() {
         <Sidebar />
         <section className="flex flex-col px-4 gap-4 md:w-full">
           <div
-            className={`${jb_mono.className} font-bold text-4xl text-center py-4 flex flex-col`}
+            className={`${jb_mono.className} font-bold text-4xl py-4 flex flex-col`}
           >
-            <h1>BRIX PAGE</h1>
-            <h1 className="bg-gradient-to-r from-primary-400 via-secondary-200 via-60% to-secondary-600 bg-clip-text text-transparent">
+            <h1 className="bg-gradient-to-r from-primary-400 via-secondary-200 via-10% to-secondary-600 bg-clip-text text-transparent">
               MARKETPLACE
             </h1>
           </div>
@@ -184,7 +188,7 @@ export default function Market() {
             />
           </div>
 
-          <div className="grid  grid-cols-5 grid-rows-3 md:grid-rows-4 gap-y-8 items-center uppercase ">
+          <div className="grid  grid-cols-5 grid-rows-3 md:grid-rows-4 items-center uppercase ">
             <h1
               className={`${jb_mono.className} font-bold text-xl hidden md:flex md:grid-cols-1`}
             >
@@ -207,13 +211,13 @@ export default function Market() {
             </h1>
             {boosted.map((page) => (
               <>
-                <div className="hidden md:flex md:grid-cols-1 ">
+                <div className="hidden md:flex md:grid-cols-1 border-[#ffffff1f] py-4 border-y  h-full">
                   <h3>#{page.ranking} Ranked</h3>
                 </div>
-                <div className="col-span-4 md:col-span-2">
+                <div className="col-span-4 md:col-span-2  border-[#ffffff1f] py-4 border-y h-full">
                   <div className="flex flex-row gap-2">
                     <Image
-                      src={brix_logo}
+                      src={page.img_url}
                       width={250}
                       height={250}
                       alt="profile"
@@ -238,7 +242,7 @@ export default function Market() {
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-col items-center md:items-start">
+                <div className="flex flex-col items-center md:items-start border-[#ffffff1f] py-4 border-y h-full">
                   <p>{page.rating}</p>
                   <div className="flex">
                     {[1, 2, 3, 4, 5].map((v) => (
@@ -249,7 +253,7 @@ export default function Market() {
                     {page.price * 1000} reviews
                   </p>
                 </div>
-                <div className="hidden md:flex flex-col gap-1 ">
+                <div className="hidden md:flex flex-col gap-1 border-[#ffffff1f] py-4 border-y h-full">
                   <h1>By {page.author}</h1>
                   <div className="flex gap-1 items-center">
                     <p>{page.created_at.toLocaleDateString()} </p>

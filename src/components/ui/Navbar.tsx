@@ -17,17 +17,21 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`${jb_mono.className} bg-background text-white px-6 py-3 hidden md:flex items-center justify-between`}
+        className={`${jb_mono.className} bg-background text-white px-6 py-3 hidden md:flex items-center justify-between gap-12`}
       >
         {/* Logo */}
 
-        <Link className="flex items-center gap-4" href="/">
+        <div className="flex items-center font-bold text-2xl">
           <Image src={brix_logo} alt="Brix Logo" width={42} height={42} />
-          <span className="text-2xl font-bold ml-2">BRIX</span>
-        </Link>
+          <Link href="/">BRIX</Link>
+        </div>
+
+        <div className="bg-[#13111a] p-2 rounded w-1/2 text-center">
+          <h1>Update: Alpha v.2 release July 27th 2025 at 11am PST</h1>
+        </div>
 
         {/* Navigation Links */}
-        <div className="flex gap-4 items-center font-bold text-2xl uppercase">
+        <div className="flex gap-4 items-center font-bold text-2xl uppercase text-nowrap">
           <Link href="/pricing" className="hover:text-blue">
             Pricing
           </Link>
