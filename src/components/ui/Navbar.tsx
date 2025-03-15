@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`${jb_mono.className} bg-background text-white px-6 py-3 hidden md:flex items-center justify-between gap-12`}
+        className={`${jb_mono.className} bg-transparent text-white px-6 py-3 hidden md:flex items-center justify-between gap-12`}
       >
         {/* Logo */}
 
