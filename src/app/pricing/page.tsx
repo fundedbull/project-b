@@ -1,4 +1,3 @@
-import PriceCard from "../../components/ui/PriceCard";
 import Footer from "../../components/ui/Footer";
 import Navbar from "../../components/ui/Navbar";
 import { JetBrains_Mono } from "next/font/google";

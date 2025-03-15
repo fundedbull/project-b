@@ -35,14 +35,18 @@ export default function Home() {
           Start for free
         </h1>
       </Link>
-      <div className="flex gap-8 md:gap-0 flex-col md:flex-row p-4 md:p-0">
-        <Image
-          className="md:mx-4"
-          width={1000}
-          height={600}
-          src={marketplace}
-          alt="marketplace image"
-        />
+      <div className="flex gap-8 md:gap-4 flex-col md:flex-row p-4 md:p-0 mt-48">
+        <div className="w-full h-full relative flex items-center justify-center overflow-clip">
+          <Image
+            className="p-1"
+            width={1000}
+            height={600}
+            src={marketplace}
+            alt="marketplace image"
+          />
+          <div className="absolute -z-10 rounded-full  size-[1000px] bg-gradient-to-r blur-2xl from-green-600 via-15% via-[#155dfc] to-red-600 animate-spin" />
+        </div>
+
         <section className="flex flex-col gap-8 md:gap-24 text-left w-full h-full">
           <article className="border border-white flex flex-col p-2 w-80 relative bg-background before:absolute before:inset-0 before:-z-10 before:bg-gradient-to-r before:from-blue before:to-orange  before:blur">
             <Image

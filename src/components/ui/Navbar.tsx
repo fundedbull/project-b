@@ -22,7 +22,13 @@ const Navbar = () => {
         {/* Logo */}
 
         <div className="flex items-center font-bold text-2xl">
-          <Image src={brix_logo} alt="Brix Logo" width={42} height={42} />
+          <Image
+            className=""
+            src={brix_logo}
+            alt="Brix Logo"
+            width={42}
+            height={42}
+          />
           <Link href="/">BRIX</Link>
         </div>
 
