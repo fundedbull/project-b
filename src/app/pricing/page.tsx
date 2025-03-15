@@ -19,10 +19,10 @@ export default function Pricing() {
       >
         PRICING
       </h1>
-      <div className="flex flex-row gap-4 self-center">
-        <div className="relative w-[390px] h-[520px] ">
+      <div className="flex flex-col md:flex-row gap-4 self-center">
+        <div className="relative w-[390px] h-[520px]">
           <video
-            className="absolute w-[390px] top-0 "
+            className="absolute h-[1010px] top-0"
             src="/standard.mov"
             autoPlay
             muted
@@ -144,9 +144,9 @@ export default function Pricing() {
           </div>
         </div>
 
-        <div className="relative w-[390px] h-[520px] ">
+        <div className="relative w-[390px] h-[520px]">
           <video
-            className="absolute w-[390px] top-0 z-10"
+            className="absolute w-[390px] top-0 z-10 object-fill"
             src="/pro_plus.mov"
             autoPlay
             muted
