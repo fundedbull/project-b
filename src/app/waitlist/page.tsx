@@ -1,24 +1,16 @@
 "use client";
 import { useState, useEffect, ReactNode, useActionState } from "react";
-import {
-  BookmarkIcon,
-  ChatBubbleLeftRightIcon,
-  Cog6ToothIcon,
-  LightBulbIcon,
-  PresentationChartLineIcon,
-  QuestionMarkCircleIcon,
-  RocketLaunchIcon,
-  Square3Stack3DIcon,
-  TicketIcon,
-  ViewfinderCircleIcon,
-} from "@heroicons/react/16/solid";
-import Navbar from "@ui/Navbar";
-import { JetBrains_Mono, Inter } from "next/font/google";
-import Link from "next/link";
-import { joinWaitlist, submitInvestorInquiry } from "../action";
+import { JetBrains_Mono } from "next/font/google";
+import { joinWaitlist } from "../action";
+import Image from "next/image";
+import macbook_view from "/public/HALF_BUILT_BRIDGES_2.png";
+import iphone_view from "/public/HALF_BUILT_BRIDGES_3.png";
+import accept_card from "/public/ACCEPT_PAYMENTS.png";
+import list_card from "/public/LIST_MARKET.png";
+import setup_card from "/public/SETUP.png";
 
 const jb_mono = JetBrains_Mono({ subsets: ["latin"] });
-const inter = Inter({ subsets: ["latin"] });
+//const inter = Inter({ subsets: ["latin"] });
 
 // Type for Popup props
 interface PopupProps {
@@ -55,138 +47,140 @@ const Popup: React.FC<PopupProps> = ({ isOpen, onClose, title, children }) => {
 
 export default function WaitList() {
   const [waitlistOpen, setWaitlistOpen] = useState(false);
-  const [investorOpen, setInvestorOpen] = useState(false);
-  const [careersOpen, setCareersOpen] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, waitAction, isWaitPending] = useActionState(joinWaitlist, null);
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [_state, investorAction, isInvestorPending] = useActionState(
-    submitInvestorInquiry,
-    null
-  );
-
   return (
     <main className="min-w-screen min-h-screen flex flex-col gap-4 uppercase">
-      <div className="hidden md:block">
-        <Navbar />
-      </div>
       <section className="flex flex-1">
-        <aside className="w-[12%] border-r border-[#0F0F1E] py-4 px-2 hidden md:block">
-          <ul
-            className={`${jb_mono.className} flex flex-col font-bold text-xl h-full gap-8`}
-          >
-            <li className="flex gap-1 items-center">
-              <BookmarkIcon className="size-6" />
-              <Link href="/waitlist">FAVORITES</Link>
-            </li>
-            <li className="flex gap-1 items-center">
-              <ViewfinderCircleIcon className="size-6" />
-              <Link href="/waitlist">BOUNTIES</Link>
-            </li>
-            <li className="flex gap-1 items-center">
-              <TicketIcon className="size-6" />
-              <Link href="/waitlist">POINTS SHOP</Link>
-            </li>
-            <li className="flex gap-1 items-center">
-              <ChatBubbleLeftRightIcon className="size-6" />
-              <Link href="/waitlist">CONNECT</Link>
-            </li>
-            <li className="flex gap-1 items-center">
-              <PresentationChartLineIcon className="size-6" />
-              <Link href="/waitlist">DASHBOARD</Link>
-            </li>
-            <li className="flex gap-1 items-center">
-              <RocketLaunchIcon className="size-6" />
-              <Link href="/waitlist">BOOSTING</Link>
-            </li>
-            <li className="flex gap-1 items-center">
-              <Square3Stack3DIcon className="size-6" />
-              <Link href="/waitlist">COURSES</Link>
-            </li>
-            <li className="flex gap-1 items-center">
-              <QuestionMarkCircleIcon className="size-6" />
-              <Link href="/waitlist">FAQS</Link>
-            </li>
-            <li className="flex gap-1 items-center">
-              <LightBulbIcon className="size-6" />
-              <Link href="/waitlist">FEEDBACK</Link>
-            </li>
-            <li
-              className={`mt-auto flex flex-col gap-1 ${inter.className} text-zinc-400 uppercase text-sm`}
-            >
-              <p>
-                People on <span className="text-orange">Waitlist</span>
-              </p>
-              <p className="border border-[#ffffffa0] rounded p-1 text-blue w-full text-center">
-                564
-              </p>
-            </li>
-            <li className="flex gap-1 items-center">
-              <Cog6ToothIcon className="size-6" />
-              <Link href="/waitlist">SETTINGS</Link>
-            </li>
-          </ul>
-        </aside>
         <article className="w-full flex flex-col items-center mt-16 gap-16">
-          <div className="text-center">
-            <h1 className={`${jb_mono.className} text-4xl md:text-6xl`}>
-              BRIX is currently under construction
-            </h1>
-            <h1 className={`${jb_mono.className} text-4xl md:text-6xl`}>
-              <span className="bg-gradient-to-r from-primary-400 via-secondary-200 via-50% to-secondary-600 bg-clip-text text-transparent">
-                Join our waitlist for early access
-              </span>
-            </h1>
-          </div>
-
-          {/* Waitlist Button */}
-          <button
-            onClick={() => setWaitlistOpen(true)}
-            className={`${jb_mono.className} uppercase px-2 p-1 rounded-full border-blue border-2 bg-background text-2xl relative before:rounded-full before:absolute before:bg-gradient-to-tr before:to-blue before:from-orange before:inset-0 before:blur before:-z-10`}
+          <h1
+            className={`${jb_mono.className} text-4xl md:text-6xl bg-gradient-to-r from-primary-400 via-secondary-200 via-50% to-secondary-600 bg-clip-text text-transparent`}
           >
-            Join the Waitlist
-          </button>
+            Meet BRIX PAGE
+          </h1>
 
-          <video className="md:mx-4 h-[500px]" controls>
-            <source
-              src="https://ntdvovqz4e.ufs.sh/f/cAY8TOuNYGL6CxlPNVDpMKE93hB45JYuVnQ1ZkoiT7jaUtxA"
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
-
+          <Image src={macbook_view} width={1920} height={1080} alt="" />
           <div className="space-y-4">
-            <p className={`${inter.className} text-2xl  text-center`}>
-              If you want to become an{" "}
-              <span className="bg-gradient-to-r from-primary-400 via-secondary-200 via-50% to-secondary-600 bg-clip-text text-transparent">
-                investor or join the team
-              </span>
-            </p>
-
-            <p className={`${inter.className} text-base  text-center`}>
-              Click below to get started.
-            </p>
+            <h1
+              className={`${jb_mono.className} text-4xl md:text-6xl text-center`}
+            >
+              The one stop shop for entrepreneurs and creators
+            </h1>
+            <p className="text-zinc-400 text-center">Where you can</p>
           </div>
 
-          {/* Investor & Careers Buttons */}
-          <div className="flex flex-col md:flex-row gap-4 pb-10">
-            <button
-              onClick={() => setInvestorOpen(true)}
-              className={`${jb_mono.className} uppercase px-2 p-1 w-64 rounded-full border-orange border-2 bg-background text-2xl relative before:rounded-full before:absolute before:bg-gradient-to-tr before:to-blue before:from-orange before:inset-0 before:blur before:-z-10`}
+          <div className="relative w-full overflow-hidden">
+            <div
+              className="flex transition-transform duration-300 ease-in-out touch-pan-x"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              onTouchStart={(e) => {
+                const touch = e.touches[0];
+                const startX = touch.clientX;
+
+                const handleTouchMove = (e: TouchEvent) => {
+                  const touch = e.touches[0];
+                  const diff = startX - touch.clientX;
+
+                  if (Math.abs(diff) > 50) {
+                    if (diff > 0) {
+                      setCurrentSlide((prev) => (prev === 2 ? 0 : prev + 1));
+                    } else {
+                      setCurrentSlide((prev) => (prev === 0 ? 2 : prev - 1));
+                    }
+                    document.removeEventListener("touchmove", handleTouchMove);
+                  }
+                };
+
+                document.addEventListener("touchmove", handleTouchMove);
+                document.addEventListener(
+                  "touchend",
+                  () => {
+                    document.removeEventListener("touchmove", handleTouchMove);
+                  },
+                  { once: true }
+                );
+              }}
             >
-              Investor
+              <div className="w-full flex-shrink-0">
+                <Image
+                  src={setup_card}
+                  width={1600}
+                  height={1200}
+                  alt=""
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="w-full flex-shrink-0">
+                <Image
+                  src={list_card}
+                  width={1600}
+                  height={1200}
+                  alt=""
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="w-full flex-shrink-0">
+                <Image
+                  src={accept_card}
+                  width={1600}
+                  height={1200}
+                  alt=""
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+            <button
+              className="absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-r md:block hidden"
+              onClick={() =>
+                setCurrentSlide((prev) => (prev === 0 ? 2 : prev - 1))
+              }
+            >
+              ←
             </button>
             <button
-              onClick={() => setCareersOpen(true)}
-              className={`${jb_mono.className} uppercase px-2 p-1 w-64 rounded-full border-orange border-2 bg-background text-2xl relative before:rounded-full before:absolute before:bg-gradient-to-tr before:to-blue before:from-orange before:inset-0 before:blur before:-z-10`}
+              className="absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-l md:block hidden"
+              onClick={() =>
+                setCurrentSlide((prev) => (prev === 2 ? 0 : prev + 1))
+              }
             >
-              Careers
+              →
             </button>
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+              {[0, 1, 2].map((dot) => (
+                <button
+                  key={dot}
+                  className={`w-2 h-2 rounded-full ${
+                    currentSlide === dot ? "bg-white" : "bg-white/50"
+                  }`}
+                  onClick={() => setCurrentSlide(dot)}
+                />
+              ))}
+            </div>
           </div>
 
-          {/* Popups */}
+          <h1 className={`${jb_mono.className} text-4xl md:text-6xl`}>
+            Gain Access To
+          </h1>
+          {/* Advance Analytics, Marketing Tools, Automations */}
+
+          <div className="flex flex-row gap-4 items-center justify-center overflow-x-scroll md:overflow-auto w-full ml-4">
+            {["Advance Analytics", "Marketing Tools", "Automations"].map(
+              (text) => (
+                <button
+                  key={text}
+                  className="border font-bold text-white px-4 py-2 rounded text-nowrap"
+                >
+                  {text}
+                </button>
+              )
+            )}
+          </div>
+
+          <Image src={iphone_view} width={1920} height={1080} alt="" />
+
           <Popup
             isOpen={waitlistOpen}
             onClose={() => setWaitlistOpen(false)}
@@ -212,83 +206,6 @@ export default function WaitList() {
                 Submit
               </button>
             </form>
-          </Popup>
-
-          <Popup
-            isOpen={investorOpen}
-            onClose={() => setInvestorOpen(false)}
-            title="Investor Inquiry"
-          >
-            <p className="text-lg mb-4">
-              Please provide your details and the amount you wish to invest.
-            </p>
-
-            {/* Form Start */}
-            <form className="flex flex-col gap-4" action={investorAction}>
-              {/* Name Input */}
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                className="border p-2 rounded w-full mb-4 text-black"
-                required
-              />
-
-              {/* Email Input */}
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                className="border p-2 rounded w-full mb-4 text-black"
-                required
-              />
-
-              {/* Phone Number Input */}
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Your Phone Number"
-                className="border p-2 rounded w-full mb-4 text-black"
-                title="Please enter a valid phone number"
-                required
-              />
-
-              {/* Amount to Invest Input */}
-              <input
-                type="number"
-                name="amount"
-                placeholder="Amount You Want to Invest"
-                className="border p-2 rounded w-full mb-4 text-black"
-                min="0"
-                step="any"
-                required
-              />
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="bg-orange-500 text-white px-4 py-2 rounded"
-              >
-                Submit
-              </button>
-            </form>
-            {/* Form End */}
-          </Popup>
-
-          <Popup
-            isOpen={careersOpen}
-            onClose={() => setCareersOpen(false)}
-            title="Join the Team"
-          >
-            <p className="text-lg mb-4">
-              Looking for opportunities? Apply now!
-            </p>
-            <Link
-              href={"https://www.linkedin.com/in/michael-rosas-32ba71330/"}
-              className="border border-[#ffffffa0] rounded p-1 text-blue w-full text-center"
-            >
-              Apply
-            </Link>
           </Popup>
         </article>
       </section>
