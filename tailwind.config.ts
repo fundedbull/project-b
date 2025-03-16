@@ -15,7 +15,7 @@ export default {
         },
       },
       colors: {
-        background: "#090912",
+        background: "#080912",
         blue: "#4DA6FF",
         orange: "#FF990A",
         neutral: {
