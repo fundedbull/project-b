@@ -1,42 +1,68 @@
 "use server";
-import { prisma } from "@/server/db";
-import { Prisma } from "@prisma/client";
-import { redirect } from "next/navigation";
-import { z } from "zod";
-import bcrypt from "bcrypt";
 
-const SignUpSchema = z.object({
-  email: z.string().email(),
-  username: z.string(),
-  tos: z.string().transform((value) => value === "on"),
-  me: z.string().transform((value) => value === "on"),
-  password: z
-    .string()
-    .min(8, "Password must be at least 8 characters long.")
-    .max(20, "Password must not exceed 20 characters"),
+import { z } from "zod";
+import { prisma } from "../server/db";
+
+const waitlistScehma = z.object({
+  email: z.string({
+    invalid_type_error: "Invalid Email",
+  }),
 });
 
-export async function signUp(
-  prevState: string | undefined,
-  formData: FormData
-) {
-  const results = SignUpSchema.safeParse(Object.fromEntries(formData));
-  if (!results.success) {
-    return "Password must be within 8 to 20 characters.";
+export async function joinWaitlist(prevState: unknown, formData: FormData) {
+  console.log("formData", Object.fromEntries(formData));
+  const validatedFields = waitlistScehma.safeParse({
+    email: formData.get("email"),
+  });
+
+  if (!validatedFields.success) {
+    return {
+      errors: validatedFields.error.flatten().fieldErrors,
+    };
   }
+
   try {
-    await prisma.user.create({
-      data: {
-        email: results.data.email,
-        password: await bcrypt.hash(results.data.password, 10),
-      },
+    await prisma.waitlist.create({
+      data: { email: validatedFields.data.email },
     });
   } catch (error) {
-    if ((error as Prisma.PrismaClientKnownRequestError).code === "P2002") {
-      return "This email is already associated with an account";
-    } else {
-      return "An unexpected error happened";
-    }
+    console.error("Error saving email to waitlist:", error);
   }
-  redirect("/login");
+
+  return { success: true };
+}
+
+const investorInquirySchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email"),
+  phone: z.string(),
+  amount: z.string(),
+});
+
+export async function submitInvestorInquiry(
+  prevState: unknown,
+  formData: FormData
+) {
+  const validatedFields = investorInquirySchema.safeParse({
+    name: formData.get("name"),
+    email: formData.get("email"),
+    phone: formData.get("phone"),
+    amount: formData.get("amount"),
+  });
+
+  if (!validatedFields.success) {
+    return {
+      errors: validatedFields.error.flatten().fieldErrors,
+    };
+  }
+  console.log(validatedFields.data);
+  try {
+    await prisma.investorInqury.create({
+      data: validatedFields.data, // Prisma will insert the validated data
+    });
+  } catch (error) {
+    console.log("Error saving investor inquiry:", error);
+  }
+
+  return { success: true };
 }

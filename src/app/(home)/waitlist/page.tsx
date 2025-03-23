@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, ReactNode, useActionState } from "react";
 import { JetBrains_Mono } from "next/font/google";
-import { joinWaitlist } from "../action";
+import { joinWaitlist } from "@/server/action";
 import Image from "next/image";
 import macbook_view from "/public/HALF_BUILT_BRIDGES_2.png";
 import iphone_view from "/public/HALF_BUILT_BRIDGES_3.png";

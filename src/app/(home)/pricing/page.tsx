@@ -1,5 +1,5 @@
-import Footer from "../../components/ui/Footer";
-import Navbar from "../../components/ui/Navbar";
+import Footer from "@/components/ui/Footer";
+import Navbar from "@/components/ui/Navbar";
 import { JetBrains_Mono } from "next/font/google";
 import { CheckIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
