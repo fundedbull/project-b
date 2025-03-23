@@ -12,7 +12,7 @@ const jetBrainsMono = JetBrains_Mono({
 
 export default function Pricing() {
   return (
-    <div className="flex flex-col gap-8 bg-background">
+    <div className="flex flex-col gap-8 bg-bg">
       <Navbar />
       <h1
         className={`${jetBrainsMono.className} text-7xl border-b px-52 self-center`}

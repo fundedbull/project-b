@@ -1,5 +1,5 @@
 "use server";
-import { prisma } from "@/app/lib/db";
+import { prisma } from "@/server/db";
 import { Prisma } from "@prisma/client";
 import { redirect } from "next/navigation";
 import { z } from "zod";

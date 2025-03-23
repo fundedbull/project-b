@@ -21,7 +21,7 @@ export default function RootLayout({
       <nav
         className={`${
           isMobileSidebarOpen ? "flex" : "hidden md:flex"
-        } flex-col p-4 min-w-screen fixed top-0 bg-background w-full md:sticky  md:w-fit md:min-h-screen`}
+        } flex-col p-4 min-w-screen fixed top-0 bg-bg w-full md:sticky  md:w-fit md:min-h-screen`}
       >
         <button
           className="w-full flex md:hidden justify-end"
@@ -47,7 +47,7 @@ export default function RootLayout({
         <h1 className={`${jb_mono.className}`}>Feedback</h1>
       </nav>
       <section className="w-full h-full">{children}</section>
-      <nav className="fixed md:hidden bottom-0 left-0 right-0 flex items-center justify-center p-4 bg-background bg-opacity-85">
+      <nav className="fixed md:hidden bottom-0 left-0 right-0 flex items-center justify-center p-4 bg-bg bg-opacity-85">
         <button
           className="flex flex-col items-center"
           onClick={() => {
