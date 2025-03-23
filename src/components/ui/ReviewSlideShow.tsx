@@ -17,10 +17,10 @@ export const ReviewSlideShow = () => {
   return (
     <article className="relative w-80 h-96 md:w-5/6 md:h-64 border border-white">
       {/* Navigation Buttons */}
-      <button className="border border-white rounded-full p-5 absolute w-fit h-fit top-1/2 -translate-y-1/2 -translate-x-1/2 bg-background">
+      <button className="border border-white rounded-full p-5 absolute w-fit h-fit top-1/2 -translate-y-1/2 -translate-x-1/2 bg-bg">
         <ArrowLeftIcon className="size-4 " />
       </button>
-      <button className="border border-white rounded-full p-5 absolute w-fit h-fit top-1/2 right-0 -translate-y-1/2 translate-x-1/2 bg-background">
+      <button className="border border-white rounded-full p-5 absolute w-fit h-fit top-1/2 right-0 -translate-y-1/2 translate-x-1/2 bg-bg">
         <ArrowRightIcon className="size-4 " />
       </button>
 

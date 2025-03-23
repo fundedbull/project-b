@@ -92,9 +92,7 @@ const Navbar = () => {
         </div>
       </nav>
       <nav
-        className={`${
-          jb_mono.className
-        } md:hidden bg-background p-4 space-y-4 ${
+        className={`${jb_mono.className} md:hidden bg-bg p-4 space-y-4 ${
           isOpen && "absolute inset-0 top-0 z-50 h-full w-screen bg-neutral-950"
         }`}
       >
