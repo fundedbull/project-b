@@ -5,7 +5,7 @@ import {
 } from "@heroicons/react/24/solid";
 import Footerbar from "@ui/Footer";
 import Navbar from "@ui/Navbar";
-import Sidebar from "@ui/sidebar";
+import Sidebar from "@ui/asidebar";
 import SubNavLink from "@ui/SubNavLinks";
 import { JetBrains_Mono, Inter } from "next/font/google";
 
@@ -235,7 +235,7 @@ export default function Market() {
                           <UserIcon className="size-4" />{" "}
                           <p>{page.total_users} Joined</p>
                         </div>
-                        <button className="text-xs  py-1 mx-6 w-20 text-center bg-background border border-white rounded-lg relative h-full before:absolute before:inset-0 before:-z-10 before:block before:bg-linear-to-r before:from-blue before:to-orange before:blur-sm">
+                        <button className="text-xs  py-1 mx-6 w-20 text-center bg-bg border border-white rounded-lg relative h-full before:absolute before:inset-0 before:-z-10 before:block before:bg-linear-to-r before:from-blue before:to-orange before:blur-sm">
                           {page.price}/{page.rate}
                         </button>
                       </div>
@@ -265,7 +265,7 @@ export default function Market() {
             ))}
           </div>
 
-          <nav className="flex flex-row overflow-x-scroll md:overflow-auto gap-4 justify-between  *:font-bold *:bg-background *:border *:border-[#ffffffa0] *:rounded-sm *:text-nowrap *:px-2 *:py-1">
+          <nav className="flex flex-row overflow-x-scroll md:overflow-auto gap-4 justify-between  *:font-bold *:bg-bg *:border *:border-[#ffffffa0] *:rounded-sm *:text-nowrap *:px-2 *:py-1">
             {subcategories.map((V) => (
               <Suspense key={V}>
                 <SubNavLink K={"subcategories"} V={V} D={"most popular"} />
@@ -333,7 +333,7 @@ export default function Market() {
                           <UserIcon className="size-4" />{" "}
                           <p>{page.total_users} Joined</p>
                         </div>
-                        <button className="text-xs  py-1 mx-6 w-20 text-center bg-background border border-white rounded-lg relative h-full before:absolute before:inset-0 before:-z-10 before:block before:bg-linear-to-r before:from-blue before:to-orange before:blur-sm">
+                        <button className="text-xs  py-1 mx-6 w-20 text-center bg-bg border border-white rounded-lg relative h-full before:absolute before:inset-0 before:-z-10 before:block before:bg-linear-to-r before:from-blue before:to-orange before:blur-sm">
                           {page.price}/{page.rate}
                         </button>
                       </div>

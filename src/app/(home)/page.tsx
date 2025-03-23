@@ -30,7 +30,7 @@ export default function Home() {
         className="relative p-1 w-64 text-center mx-4  before:absolute before:inset-0 before:-z-10 before:bg-linear-to-r before:from-blue before:to-orange before:rounded-full before:blur-sm"
       >
         <h1
-          className={`bg-background p-1 rounded-full font-semibold uppercase border-2 border-blue`}
+          className={`bg-bg p-1 rounded-full font-semibold uppercase border-2 border-blue`}
         >
           Start for free
         </h1>
@@ -48,7 +48,7 @@ export default function Home() {
         </div>
 
         <section className="flex flex-col gap-8 md:gap-24 text-left w-full h-full">
-          <article className="border border-white flex flex-col p-2 w-80 relative bg-background before:absolute before:inset-0 before:-z-10 before:bg-linear-to-r before:from-blue before:to-orange  before:blur-sm">
+          <article className="border border-white flex flex-col p-2 w-80 relative bg-bg before:absolute before:inset-0 before:-z-10 before:bg-linear-to-r before:from-blue before:to-orange  before:blur-sm">
             <Image
               src={grid_svg}
               width={100}
@@ -63,7 +63,7 @@ export default function Home() {
               Click Build A Brix to get started on making your Brix Page.
             </p>
           </article>
-          <article className="border border-white flex flex-col p-2 w-80 self-end relative bg-background before:absolute before:inset-0 before:-z-10 before:bg-linear-to-r before:from-blue before:to-orange  before:blur-sm">
+          <article className="border border-white flex flex-col p-2 w-80 self-end relative bg-bg before:absolute before:inset-0 before:-z-10 before:bg-linear-to-r before:from-blue before:to-orange  before:blur-sm">
             <Image
               src={tile_grid_svg}
               width={100}
@@ -79,7 +79,7 @@ export default function Home() {
               selling.
             </p>
           </article>
-          <article className="border border-white flex flex-col p-2 w-80 relative bg-background before:absolute before:inset-0 before:-z-10 before:bg-linear-to-r before:from-blue before:to-orange  before:blur-sm">
+          <article className="border border-white flex flex-col p-2 w-80 relative bg-bg before:absolute before:inset-0 before:-z-10 before:bg-linear-to-r before:from-blue before:to-orange  before:blur-sm">
             <Image
               src={panels_svg}
               width={100}

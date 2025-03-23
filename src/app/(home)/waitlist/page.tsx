@@ -30,7 +30,7 @@ const Popup: React.FC<PopupProps> = ({ isOpen, onClose, title, children }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-50">
-      <div className="bg-background border-blue border-2 p-6 rounded-lg shadow-lg text-center relative w-96">
+      <div className="bg-bg border-blue border-2 p-6 rounded-lg shadow-lg text-center relative w-96">
         <div className="bg-linear-to-r from-blue to-orange size-32 inset-0  -z-10  blur-sm h-full w-96 absolute" />
         <h2 className="text-2xl font-bold mb-4">{title}</h2>
         {children}
