@@ -21,13 +21,13 @@ export default function Home() {
       <Navbar />
       <h1 className="text-5xl md:text-6xl md:w-3/5 uppercase p-4">
         The one stop shop for{" "}
-        <span className="bg-gradient-to-r from-primary-400 via-secondary-200 via-50% to-secondary-600 bg-clip-text text-transparent">
+        <span className="bg-linear-to-r from-primary-400 via-secondary-200 via-50% to-secondary-600 bg-clip-text text-transparent">
           entrepreneurs and creators
         </span>
       </h1>
       <Link
         href="/waitlist"
-        className="relative p-1 w-64 text-center mx-4  before:absolute before:inset-0 before:-z-10 before:bg-gradient-to-r before:from-blue before:to-orange before:rounded-full before:blur"
+        className="relative p-1 w-64 text-center mx-4  before:absolute before:inset-0 before:-z-10 before:bg-linear-to-r before:from-blue before:to-orange before:rounded-full before:blur-sm"
       >
         <h1
           className={`bg-background p-1 rounded-full font-semibold uppercase border-2 border-blue`}
@@ -44,11 +44,11 @@ export default function Home() {
             src={marketplace}
             alt="marketplace image"
           />
-          <div className="absolute -z-10 rounded-full  size-[1000px] bg-gradient-to-r blur-2xl from-green-600 via-15% via-[#155dfc] to-red-600 animate-spin" />
+          <div className="absolute -z-10 rounded-full  size-[1000px] bg-linear-to-r blur-2xl from-green-600 via-15% via-[#155dfc] to-red-600 animate-spin" />
         </div>
 
         <section className="flex flex-col gap-8 md:gap-24 text-left w-full h-full">
-          <article className="border border-white flex flex-col p-2 w-80 relative bg-background before:absolute before:inset-0 before:-z-10 before:bg-gradient-to-r before:from-blue before:to-orange  before:blur">
+          <article className="border border-white flex flex-col p-2 w-80 relative bg-background before:absolute before:inset-0 before:-z-10 before:bg-linear-to-r before:from-blue before:to-orange  before:blur-sm">
             <Image
               src={grid_svg}
               width={100}
@@ -63,7 +63,7 @@ export default function Home() {
               Click Build A Brix to get started on making your Brix Page.
             </p>
           </article>
-          <article className="border border-white flex flex-col p-2 w-80 self-end relative bg-background before:absolute before:inset-0 before:-z-10 before:bg-gradient-to-r before:from-blue before:to-orange  before:blur">
+          <article className="border border-white flex flex-col p-2 w-80 self-end relative bg-background before:absolute before:inset-0 before:-z-10 before:bg-linear-to-r before:from-blue before:to-orange  before:blur-sm">
             <Image
               src={tile_grid_svg}
               width={100}
@@ -79,7 +79,7 @@ export default function Home() {
               selling.
             </p>
           </article>
-          <article className="border border-white flex flex-col p-2 w-80 relative bg-background before:absolute before:inset-0 before:-z-10 before:bg-gradient-to-r before:from-blue before:to-orange  before:blur">
+          <article className="border border-white flex flex-col p-2 w-80 relative bg-background before:absolute before:inset-0 before:-z-10 before:bg-linear-to-r before:from-blue before:to-orange  before:blur-sm">
             <Image
               src={panels_svg}
               width={100}

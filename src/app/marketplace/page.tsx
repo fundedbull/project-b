@@ -225,7 +225,7 @@ export default function Home() {
               <p>
                 Made by <span className="text-orange">creators</span>
               </p>
-              <p className="border border-[#ffffffa0] rounded p-1 w-fit text-blue">
+              <p className="border border-[#ffffffa0] rounded-sm p-1 w-fit text-blue">
                 $10,142,242
               </p>
             </li>
@@ -279,37 +279,37 @@ export default function Home() {
             className={`${jb_mono.className} font-bold text-2xl grid grid-rows-1 grid-cols-7 h-fit w-full gap-4`}
           >
             <Link
-              className="bg-background border border-[#ffffffa0] text-blue rounded px-2 py-1 font-bold text-center"
+              className="bg-background border border-[#ffffffa0] text-blue rounded-sm px-2 py-1 font-bold text-center"
               href="/"
             >
               MOST POPULAR
             </Link>
             <Link
-              className="bg-background border border-[#ffffffa0] text-blue rounded px-2 py-1 font-bold text-center"
+              className="bg-background border border-[#ffffffa0] text-blue rounded-sm px-2 py-1 font-bold text-center"
               href="/"
             >
               MOST MEMBERS
             </Link>
             <Link
-              className="bg-background border border-[#ffffffa0] text-blue rounded px-2 py-1 font-bold text-center"
+              className="bg-background border border-[#ffffffa0] text-blue rounded-sm px-2 py-1 font-bold text-center"
               href="/"
             >
               MOST REVIEWS
             </Link>
             <Link
-              className="bg-background border border-[#ffffffa0] text-blue rounded px-2 py-1 font-bold text-center"
+              className="bg-background border border-[#ffffffa0] text-blue rounded-sm px-2 py-1 font-bold text-center"
               href="/"
             >
               MOST PROFIT
             </Link>
             <Link
-              className="bg-background border border-[#ffffffa0] text-blue rounded px-2 py-1 font-bold text-center"
+              className="bg-background border border-[#ffffffa0] text-blue rounded-sm px-2 py-1 font-bold text-center"
               href="/"
             >
               FREE BRIX
             </Link>
             <Link
-              className="bg-background border border-[#ffffffa0] text-blue rounded px-2 py-1 font-bold text-center"
+              className="bg-background border border-[#ffffffa0] text-blue rounded-sm px-2 py-1 font-bold text-center"
               href="/"
             >
               NEW BRIX

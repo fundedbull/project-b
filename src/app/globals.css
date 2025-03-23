@@ -1,12 +1,76 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@layer components {
-  .btn-primary {
-    @apply relative h-full p-1 transition duration-300 ease-in-out before:absolute before:-inset-0 before:block before:rounded-full before:bg-gradient-to-r before:from-blue before:to-orange hover:scale-105 hover:cursor-pointer;
+@theme {
+  --color-background: #090912;
+  --color-blue: #4da6ff;
+  --color-orange: #ff990a;
+
+  --color-neutral-100: #ffffff;
+  --color-neutral-200: #f5f4fa;
+  --color-neutral-300: #d9d7e6;
+  --color-neutral-400: #b7b4c7;
+  --color-neutral-500: #88849c;
+  --color-neutral-600: #5e5b71;
+  --color-neutral-700: #302c3f;
+  --color-neutral-800: #13111a;
+
+  --color-primary-50: #edfffe;
+  --color-primary-100: #c0feff;
+  --color-primary-200: #81fbff;
+  --color-primary-300: #3af8ff;
+  --color-primary-400: #00ffff;
+  --color-primary-500: #00e1e2;
+  --color-primary-600: #00b2b7;
+  --color-primary-700: #008c91;
+  --color-primary-800: #006c72;
+  --color-primary-900: #04585d;
+  --color-primary-950: #00343a;
+
+  --color-secondary-50: #fffaec;
+  --color-secondary-100: #fff4d3;
+  --color-secondary-200: #ffe5a5;
+  --color-secondary-300: #ffd16d;
+  --color-secondary-400: #ffb132;
+  --color-secondary-500: #ff970a;
+  --color-secondary-600: #ff7f00;
+  --color-secondary-700: #cc5c02;
+  --color-secondary-800: #a1470b;
+  --color-secondary-900: #823c0c;
+  --color-secondary-950: #461c04;
+
+  @keyframes fadeInOut {
+    0%,
+    100% {
+      opacity: 0%;
+    }
+    50% {
+      opacity: 100%;
+    }
   }
-  .btn-min-primary {
-    @apply relative rounded-full bg-neutral-800 px-2 py-1 text-center font-bold;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
   }
+}
+
+@utility btn-primary {
+  @apply relative h-full p-1 transition duration-300 ease-in-out before:absolute before:-inset-0 before:block before:rounded-full before:bg-linear-to-r before:from-blue before:to-orange hover:scale-105 hover:cursor-pointer;
+}
+
+@utility btn-min-primary {
+  @apply relative rounded-full bg-neutral-800 px-2 py-1 text-center font-bold;
 }

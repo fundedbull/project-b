@@ -40,7 +40,7 @@ export function BrixCard({
     <article
       className={
         boosted_member
-          ? `${jb_mono.className} bg-background border-2 border-white rounded-lg relative h-full before:absolute before:inset-0 before:-z-10 before:block before:bg-gradient-to-r before:from-blue before:to-orange before:blur`
+          ? `${jb_mono.className} bg-background border-2 border-white rounded-lg relative h-full before:absolute before:inset-0 before:-z-10 before:block before:bg-linear-to-r before:from-blue before:to-orange before:blur-sm`
           : `${jb_mono.className} bg-background border-2 border-white rounded-lg`
       }
     >
@@ -56,7 +56,7 @@ export function BrixCard({
           className={
             boosted_member
               ? "btn-primary"
-              : "border border-[#ffffffa0] rounded w-fit text-orange"
+              : "border border-[#ffffffa0] rounded-sm w-fit text-orange"
           }
         >
           <p

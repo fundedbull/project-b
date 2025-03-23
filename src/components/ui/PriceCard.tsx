@@ -21,7 +21,7 @@ const CoachCard: FC<Props> = ({
   redirect,
 }) => {
   return (
-    <article className="relative flex h-fit min-w-80 w-80 flex-col rounded-xl border border-white bg-neutral-800 p-4 text-left text-white before:absolute before:-inset-0 before:-z-10 before:block before:bg-gradient-to-r before:blur md:min-w-96">
+    <article className="relative flex h-fit min-w-80 w-80 flex-col rounded-xl border border-white bg-neutral-800 p-4 text-left text-white before:absolute before:-inset-0 before:-z-10 before:block before:bg-linear-to-r before:blur-sm md:min-w-96">
       <div className="flex w-full justify-between">
         <div className="flex flex-col">
           <h2 className="text-left text-2xl font-semibold text-blue">{tier}</h2>
@@ -49,7 +49,7 @@ const CoachCard: FC<Props> = ({
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth="1.5"
-              className="size-6 rounded bg-gradient-to-r stroke-white"
+              className="size-6 rounded-sm bg-linear-to-r stroke-white"
             >
               <path
                 strokeLinecap="round"
@@ -75,7 +75,7 @@ const CoachCard: FC<Props> = ({
       {unlocked && (
         <Link
           href={redirect}
-          className="relative h-fit p-[2px] transition duration-300 ease-in-out before:absolute before:-inset-0 before:block before:rounded-full before:bg-gradient-to-r before:from-white before:to-white hover:scale-105 hover:cursor-pointer"
+          className="relative h-fit p-[2px] transition duration-300 ease-in-out before:absolute before:-inset-0 before:block before:rounded-full before:bg-linear-to-r before:from-white before:to-white hover:scale-105 hover:cursor-pointer"
         >
           <p className="relative rounded-full bg-neutral-800 px-2 py-1 text-center font-bold text-blue">
             Buy Now

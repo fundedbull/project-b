@@ -83,7 +83,7 @@ export default function Sidebar() {
             <p>
               Made by <span className="text-orange">creators</span>
             </p>
-            <p className="border border-[#ffffffa0] rounded p-1 w-fit text-blue">
+            <p className="border border-[#ffffffa0] rounded-sm p-1 w-fit text-blue">
               $10,142,242
             </p>
           </li>

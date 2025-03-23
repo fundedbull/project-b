@@ -33,7 +33,7 @@ const CardSlideShow = () => {
   }, [currentSlide]);
 
   return (
-    <article className="relative flex h-full w-[60vw] flex-col rounded-xl border border-[#ffffff0a] bg-neutral-800 p-4 text-left text-white before:absolute before:-inset-0 before:-z-10 before:block before:bg-secondary-400 before:blur">
+    <article className="relative flex h-full w-[60vw] flex-col rounded-xl border border-[#ffffff0a] bg-neutral-800 p-4 text-left text-white before:absolute before:-inset-0 before:-z-10 before:block before:bg-secondary-400 before:blur-sm">
       <div className="bg-neutral-800 rounded-full text-center">
         <Text>{slides[currentSlide].paragraph}</Text>
       </div>

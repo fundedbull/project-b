@@ -10,7 +10,7 @@ const OfferCard: FC<{
   redirect: string;
 }> = ({ heading, perks, price, redirect }) => {
   return (
-    <article className="relative flex h-full min-w-80 flex-col rounded-xl border border-[#ffffff0a] bg-neutral-800 p-4 text-left text-white before:absolute before:-inset-0 before:-z-10 before:block before:bg-gradient-to-r before:from-blue before:to-orange before:blur">
+    <article className="relative flex h-full min-w-80 flex-col rounded-xl border border-[#ffffff0a] bg-neutral-800 p-4 text-left text-white before:absolute before:-inset-0 before:-z-10 before:block before:bg-linear-to-r before:from-blue before:to-orange before:blur-sm">
       {/* This is the heading part of the card */}
       <div className="flex w-full justify-between">
         <div className="flex flex-col">
@@ -29,7 +29,7 @@ const OfferCard: FC<{
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
-                className="size-6 rounded stroke-orange"
+                className="size-6 rounded-sm stroke-orange"
               >
                 <path
                   strokeLinecap="round"

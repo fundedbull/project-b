@@ -62,7 +62,7 @@ export default function Pricing() {
                   <p>Accept payments</p>
                 </li>
               </ul>
-              <div className="relative h-fit p-[2px] transition duration-300 ease-in-out before:absolute before:-inset-0 before:block before:rounded-full before:bg-gradient-to-r before:from-white before:to-white hover:scale-105 hover:cursor-pointer">
+              <div className="relative h-fit p-[2px] transition duration-300 ease-in-out before:absolute before:-inset-0 before:block before:rounded-full before:bg-linear-to-r before:from-white before:to-white hover:scale-105 hover:cursor-pointer">
                 <p className="relative rounded-full bg-neutral-800 px-2 py-1 text-center font-bold text-blue">
                   Buy Now
                 </p>
@@ -124,7 +124,7 @@ export default function Pricing() {
                   <p>Business Tools</p>
                 </li>
               </ul>
-              <div className="relative h-fit p-[2px] transition duration-300 ease-in-out before:absolute before:-inset-0 before:block before:rounded-full before:bg-gradient-to-r before:from-white before:to-white hover:scale-105 hover:cursor-pointer">
+              <div className="relative h-fit p-[2px] transition duration-300 ease-in-out before:absolute before:-inset-0 before:block before:rounded-full before:bg-linear-to-r before:from-white before:to-white hover:scale-105 hover:cursor-pointer">
                 <p className="relative rounded-full bg-neutral-800 px-2 py-1 text-center font-bold text-blue">
                   Buy Now
                 </p>
@@ -186,7 +186,7 @@ export default function Pricing() {
                   <p>Networking features</p>
                 </li>
               </ul>
-              <div className="relative h-fit p-[2px] transition duration-300 ease-in-out before:absolute before:-inset-0 before:block before:rounded-full before:bg-gradient-to-r before:from-white before:to-white hover:scale-105 hover:cursor-pointer">
+              <div className="relative h-fit p-[2px] transition duration-300 ease-in-out before:absolute before:-inset-0 before:block before:rounded-full before:bg-linear-to-r before:from-white before:to-white hover:scale-105 hover:cursor-pointer">
                 <p className="relative rounded-full bg-neutral-800 px-2 py-1 text-center font-bold text-blue">
                   Buy Now
                 </p>

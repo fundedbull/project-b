@@ -31,7 +31,7 @@ const Popup: React.FC<PopupProps> = ({ isOpen, onClose, title, children }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-50">
       <div className="bg-background border-blue border-2 p-6 rounded-lg shadow-lg text-center relative w-96">
-        <div className="bg-gradient-to-r from-blue to-orange size-32 inset-0  -z-10  blur h-full w-96 absolute" />
+        <div className="bg-linear-to-r from-blue to-orange size-32 inset-0  -z-10  blur-sm h-full w-96 absolute" />
         <h2 className="text-2xl font-bold mb-4">{title}</h2>
         {children}
         <button
@@ -57,7 +57,7 @@ export default function WaitList() {
       <section className="flex flex-1">
         <article className="w-full flex flex-col items-center mt-16 gap-16">
           <h1
-            className={`${jb_mono.className} text-4xl md:text-6xl bg-gradient-to-r from-primary-400 via-secondary-200 via-50% to-secondary-600 bg-clip-text text-transparent`}
+            className={`${jb_mono.className} text-4xl md:text-6xl bg-linear-to-r from-primary-400 via-secondary-200 via-50% to-secondary-600 bg-clip-text text-transparent`}
           >
             Meet BRIX PAGE
           </h1>
@@ -104,7 +104,7 @@ export default function WaitList() {
                 );
               }}
             >
-              <div className="w-full flex-shrink-0">
+              <div className="w-full shrink-0">
                 <Image
                   src={setup_card}
                   width={1600}
@@ -113,7 +113,7 @@ export default function WaitList() {
                   className="w-full h-auto"
                 />
               </div>
-              <div className="w-full flex-shrink-0">
+              <div className="w-full shrink-0">
                 <Image
                   src={list_card}
                   width={1600}
@@ -122,7 +122,7 @@ export default function WaitList() {
                   className="w-full h-auto"
                 />
               </div>
-              <div className="w-full flex-shrink-0">
+              <div className="w-full shrink-0">
                 <Image
                   src={accept_card}
                   width={1600}
@@ -171,7 +171,7 @@ export default function WaitList() {
               (text) => (
                 <button
                   key={text}
-                  className="border font-bold text-white px-4 py-2 rounded text-nowrap"
+                  className="border font-bold text-white px-4 py-2 rounded-sm text-nowrap"
                 >
                   {text}
                 </button>
@@ -196,10 +196,10 @@ export default function WaitList() {
                 name="email"
                 required
                 placeholder="Your email"
-                className="border p-2 rounded w-full mb-4 text-black"
+                className="border p-2 rounded-sm w-full mb-4 text-black"
               />
               <button
-                className="bg-blue-500 text-white px-4 py-2 rounded"
+                className="bg-blue-500 text-white px-4 py-2 rounded-sm"
                 type="submit"
                 disabled={isWaitPending}
               >

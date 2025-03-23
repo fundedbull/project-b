@@ -32,7 +32,7 @@ const Navbar = () => {
           <Link href="/">BRIX</Link>
         </div>
 
-        <div className="bg-[#13111a] p-2 rounded w-1/2 text-center">
+        <div className="bg-[#13111a] p-2 rounded-sm w-1/2 text-center">
           <h1>Update: Alpha v.2 release July 27th 2025 at 11am PST</h1>
         </div>
 

@@ -82,7 +82,7 @@ export default function Footerbar() {
           <div className="mb-4 mt-4 w-fit">
             <form className="flex flex-col gap-4 md:flex-row">
               <input
-                className="rounded-full bg-neutral-700 px-4 py-3 font-semibold outline-none"
+                className="rounded-full bg-neutral-700 px-4 py-3 font-semibold outline-hidden"
                 placeholder="Your email address"
               />
               <div className="button-primary-gradient h-full">
