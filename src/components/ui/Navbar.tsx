@@ -1,5 +1,7 @@
 "use client";
 
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+
 import Link from "next/link";
 import Image from "next/image";
 import brix_logo from "/public/brix_logo.png";
@@ -86,9 +88,12 @@ const Navbar = () => {
             Build A Brix
           </Link>
           <p>/</p>
-          <Link href="/pricing" className="hover:text-blue">
-            Login
-          </Link>
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
         </div>
       </nav>
       <nav
@@ -164,9 +169,12 @@ const Navbar = () => {
           <Link href="/build-a-brix" className="hover:text-blue">
             Build A Brix
           </Link>
-          <Link href="/login" className="hover:text-blue">
-            Login
-          </Link>
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
         </div>
       </nav>
     </>
