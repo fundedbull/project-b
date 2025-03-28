@@ -84,7 +84,7 @@ const Navbar = () => {
           </div>
 
           <p>/</p>
-          <Link href="/pricing" className="hover:text-blue">
+          <Link href="/build-a-brix" className="hover:text-blue">
             Build A Brix
           </Link>
           <p>/</p>

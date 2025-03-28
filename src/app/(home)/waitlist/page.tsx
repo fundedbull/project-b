@@ -1,172 +1,131 @@
 "use client";
-import { useState, useEffect, ReactNode, useActionState } from "react";
-import { JetBrains_Mono } from "next/font/google";
-import { joinWaitlist } from "@/server/action";
-import Image from "next/image";
-import macbook_view from "/public/HALF_BUILT_BRIDGES_2.png";
 
-import CardStack from "@/components/card-stack";
+//import Image from "next/image";
+import Navbar from "@ui/Navbar";
+
+import WaitlistSvg from "@/components/waitlist-svg";
+import { joinWaitlist, getWaitlistCount } from "@/server/action";
+import { JetBrains_Mono } from "next/font/google";
+import { useState, useEffect } from "react";
+import { useActionState } from "react";
+import Image from "next/image";
+import {
+  GoogleReCaptcha,
+  GoogleReCaptchaProvider,
+} from "react-google-recaptcha-v3";
 
 const jb_mono = JetBrains_Mono({ subsets: ["latin"] });
-//const inter = Inter({ subsets: ["latin"] });
-
-// Type for Popup props
-interface PopupProps {
-  isOpen: boolean;
-  onClose: () => void;
-  title: string;
-  children: ReactNode;
-}
-
-// Popup Component
-const Popup: React.FC<PopupProps> = ({ isOpen, onClose, title, children }) => {
-  useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "auto";
-  }, [isOpen]);
-
-  if (!isOpen) return null;
-
-  return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-50">
-      <div className="bg-bg border-blue border-2 p-6 rounded-lg shadow-lg text-center relative w-96">
-        <div className="bg-linear-to-r from-blue to-orange size-32 inset-0  -z-10  blur-sm h-full w-96 absolute" />
-        <h2 className="text-2xl font-bold mb-4">{title}</h2>
-        {children}
-        <button
-          className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
-          onClick={onClose}
-        >
-          ✕
-        </button>
-      </div>
-    </div>
-  );
-};
 
 export default function WaitList() {
-  const [waitlistOpen, setWaitlistOpen] = useState(false);
-
+  const [showPopup, setShowPopup] = useState(false);
+  const [formSuccess, setFormSuccess] = useState(false);
+  const [waitlistCount, setWaitlistCount] = useState(0);
+  const [token, setToken] = useState<string | null>(null);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, waitAction, isWaitPending] = useActionState(joinWaitlist, null);
 
+  useEffect(() => {
+    const fetchWaitlistCount = async () => {
+      const count = await getWaitlistCount();
+      setWaitlistCount(count);
+    };
+    fetchWaitlistCount();
+  }, []);
+
+  const handleSubmit = async (formData: FormData) => {
+    if (!token) {
+      alert("Please wait for ReCaptcha verification");
+      return;
+    }
+
+    formData.append("recaptchaToken", token);
+    await waitAction(formData);
+    setFormSuccess(true);
+
+    const newCount = waitlistCount + 1;
+    setWaitlistCount(newCount);
+    setTimeout(() => {
+      setShowPopup(true);
+    }, 1000);
+  };
+
+  const handleReCaptchaVerify = (token: string) => {
+    setToken(token);
+  };
+
   return (
-    <main className=" flex flex-col gap-4 uppercase">
-      <section className="flex flex-1">
-        <article className="w-full flex flex-col items-center mt-16 gap-4">
+    <GoogleReCaptchaProvider
+      reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+    >
+      <main>
+        <Navbar />
+        <section className="flex flex-col items-center h-screen w-full gap-16 bg-[#d1d3d7] relative overflow-clip md:overflow-auto">
+          <GoogleReCaptcha onVerify={handleReCaptchaVerify} />
+
           <h1
-            className={`${jb_mono.className} text-4xl md:text-6xl bg-linear-to-r from-primary-400 via-secondary-200 via-50% to-secondary-600 bg-clip-text text-transparent`}
+            className={`${jb_mono.className} text-4xl md:text-6xl mt-16 font-bold z-10 text-center `}
           >
-            Meet BRIX PAGE
+            <span className="text-black uppercase">
+              Join the waitlist for early access
+            </span>
           </h1>
 
-          <Image src={macbook_view} width={1920} height={1080} alt="" />
-          <div className="space-y-4">
-            <h1
-              className={`${jb_mono.className} text-4xl md:text-6xl text-center`}
-            >
-              The one stop shop for entrepreneurs and creators
-            </h1>
-            <p className="text-zinc-400 text-center">Where you can</p>
-          </div>
-
-          <CardStack
-            images={["/SETUP.png", "/LIST_MARKET.png", "/ACCEPT_PAYMENTS.png"]}
-          />
-
-          <Image
-            className="w-[630px]"
-            src={"/what-seperates-us.png"}
-            width={420}
-            height={420}
-            alt=""
-          />
-
-          {/* <h1 className={`${jb_mono.className} text-4xl md:text-6xl`}>
-            Gain Access To
-          </h1> */}
-          {/* Advance Analytics, Marketing Tools, Automations */}
-
-          {/* <div className="flex flex-row gap-4 items-center justify-center overflow-x-scroll md:overflow-auto w-full ml-4">
-            {["Advance Analytics", "Marketing Tools", "Automations"].map(
-              (text) => (
-                <button
-                  key={text}
-                  className="border font-bold text-white px-4 py-2 rounded-sm text-nowrap"
-                >
-                  {text}
-                </button>
-              )
-            )}
-          </div> */}
-
-          {/* <Image
-            className="w-[1020px] h-auto"
-            src={"/BRIX_PAGE_PAPER_FEATURES_5.png"}
-            width={1920}
-            height={1080}
-            alt=""
-          /> */}
-
-          {/* <section className="grid grid-cols-3 grid-rows-4 gap-4 max-h-xl">
-            <div className="border border-white rounded-lg" />
-            <div className="border border-white rounded-lg row-span-3 flex flex-col items-center">
-              <h1>Points Shop</h1>
-            </div>
-            <div className="border border-white rounded-lg row-span-2">
-              <h1>Networking</h1>
-              <p>
-                Connect and Hire Skilled Individuals in Specific Niches for any
-                task or projects.
-              </p>
-            </div>
-            <div className="border border-white rounded-lg">
-              <h1>events</h1>
-            </div>
-            <div className="border border-white rounded-lg row-span-2">
-              <h1>Earn Rewards</h1>
-              <p>
-                That can be spent in our Points Shop for Boosting, & PRO Plans.
-              </p>
-            </div>
-            <div className="border border-white rounded-lg">
-              <h1>events</h1>
-            </div>
-            <div className="border border-white rounded-lg">
-              <h1>events</h1>
-            </div>
-            <div className="border border-white rounded-lg">
-              <h1>events</h1>
-            </div>
-          </section> */}
-
-          <Popup
-            isOpen={waitlistOpen}
-            onClose={() => setWaitlistOpen(false)}
-            title="Join the Waitlist"
-          >
-            <p className="text-lg mb-4">
-              Enter your email to get early access perks.
+          <div className="text-center z-10">
+            <p className={`${jb_mono.className} text-lg text-black mb-4`}>
+              {waitlistCount} people have already joined!
             </p>
-            <form action={waitAction}>
+            <form
+              action={handleSubmit}
+              className="flex items-center justify-center gap-4"
+            >
               <input
                 type="email"
                 id="email"
                 name="email"
                 required
                 placeholder="Your email"
-                className="border p-2 rounded-sm w-full mb-4 text-black"
+                className="border-4 border-zinc-900 p-2 w-full md:w-96 text-black rounded-full"
               />
               <button
-                className="bg-blue-500 text-white px-4 py-2 rounded-sm"
+                className={`${
+                  formSuccess ? "bg-green-600" : "bg-zinc-900"
+                } text-white px-4 py-2 rounded-sm`}
                 type="submit"
-                disabled={isWaitPending}
+                disabled={isWaitPending || !token}
               >
-                Submit
+                {formSuccess ? "Success!" : "Submit"}
               </button>
             </form>
-          </Popup>
-        </article>
-      </section>
-    </main>
+          </div>
+
+          <WaitlistSvg />
+
+          {showPopup && (
+            <div className="fixed text-black top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg shadow-lg z-50 ">
+              <a
+                href="https://kickstarter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  className="self-center w-full"
+                  src="/BRIX_PAGE_BACk_ON_KICKSTARTER.png"
+                  alt="Kickstarter"
+                  width={1000}
+                  height={1000}
+                />
+              </a>
+
+              <button
+                onClick={() => setShowPopup(false)}
+                className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+              >
+                ✕
+              </button>
+            </div>
+          )}
+        </section>
+      </main>
+    </GoogleReCaptchaProvider>
   );
 }

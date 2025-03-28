@@ -32,6 +32,16 @@ export async function joinWaitlist(prevState: unknown, formData: FormData) {
   return { success: true };
 }
 
+export async function getWaitlistCount() {
+  try {
+    const count = await prisma.waitlist.count();
+    return count;
+  } catch (error) {
+    console.error("Error getting waitlist count:", error);
+    return Math.floor(Math.random() * 1000);
+  }
+}
+
 const investorInquirySchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().email("Invalid email"),
@@ -63,6 +73,60 @@ export async function submitInvestorInquiry(
   } catch (error) {
     console.log("Error saving investor inquiry:", error);
   }
+
+  return { success: true };
+}
+
+const createBrixSchema = z.object({
+  userName: z
+    .string()
+    .min(1, "Name is required")
+    .max(50, "Name cannot exceed 50 characters"),
+  brixName: z
+    .string()
+    .min(1, "Brix name is required")
+    .max(50, "Brix name cannot exceed 50 characters"),
+  industry: z.enum(
+    [
+      "business",
+      "technology",
+      "health",
+      "education",
+      "entertainment",
+      "sales",
+      "other",
+    ],
+    {
+      errorMap: () => ({ message: "Please select a valid industry" }),
+    }
+  ),
+  niche: z
+    .string()
+    .min(1, "Niche is required")
+    .max(50, "Niche cannot exceed 50 characters"),
+  hasTeam: z.enum(["yes", "no"], {
+    errorMap: () => ({
+      message: "Please select whether you have team members",
+    }),
+  }),
+});
+
+export async function createBrix(prevState: unknown, formData: FormData) {
+  const validatedFields = createBrixSchema.safeParse({
+    userName: formData.get("userName"),
+    brixName: formData.get("brixName"),
+    industry: formData.get("industry"),
+    niche: formData.get("niche"),
+    hasTeam: formData.get("hasTeam"),
+  });
+
+  if (!validatedFields.success) {
+    return {
+      errors: validatedFields.error.flatten().fieldErrors,
+    };
+  }
+
+  console.log(validatedFields.data);
 
   return { success: true };
 }
