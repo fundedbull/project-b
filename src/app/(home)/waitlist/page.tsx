@@ -104,7 +104,7 @@ export default function WaitList() {
           {showPopup && (
             <div className="fixed text-black top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg shadow-lg z-50 ">
               <a
-                href="https://kickstarter.com"
+                href="https://www.kickstarter.com/projects/brixpage/146012701"
                 target="_blank"
                 rel="noopener noreferrer"
               >
