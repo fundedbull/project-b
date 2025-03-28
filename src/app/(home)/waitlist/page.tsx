@@ -13,6 +13,7 @@ import {
   GoogleReCaptcha,
   GoogleReCaptchaProvider,
 } from "react-google-recaptcha-v3";
+import { UserIcon } from "@heroicons/react/24/solid";
 
 const jb_mono = JetBrains_Mono({ subsets: ["latin"] });
 
@@ -41,9 +42,7 @@ export default function WaitList() {
     formData.append("recaptchaToken", token);
     await waitAction(formData);
     setFormSuccess(true);
-
-    const newCount = waitlistCount + 1;
-    setWaitlistCount(newCount);
+    setWaitlistCount((prevCount) => prevCount + 1);
     setTimeout(() => {
       setShowPopup(true);
     }, 1000);
@@ -70,10 +69,7 @@ export default function WaitList() {
             </span>
           </h1>
 
-          <div className="text-center z-10">
-            <p className={`${jb_mono.className} text-lg text-black mb-4`}>
-              {waitlistCount} people have already joined!
-            </p>
+          <div className="text-center z-10 flex flex-col items-center gap-4">
             <form
               action={handleSubmit}
               className="flex items-center justify-center gap-4"
@@ -96,6 +92,11 @@ export default function WaitList() {
                 {formSuccess ? "Success!" : "Submit"}
               </button>
             </form>
+            <p
+              className={`${jb_mono.className} text-lg text-black mb-4  rounded-sm p-1 flex items-center justify-end gap-2`}
+            >
+              <UserIcon className="size-4" /> {waitlistCount + 200} joined!
+            </p>
           </div>
 
           <WaitlistSvg />
