@@ -2,8 +2,9 @@
 import React, { useEffect, useRef } from "react";
 
 const InfiniteScrollText = () => {
-  const scrollContainerRef = useRef(null);
-  const contentRef = useRef(null);
+  // Specify type for DOM elements
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
@@ -11,19 +12,20 @@ const InfiniteScrollText = () => {
 
     if (!scrollContainer || !content) return;
 
-    // Create duplicate content for seamless scrolling
-    const contentWidth = content.offsetWidth;
-    const clonedContent = content.cloneNode(true);
-    scrollContainer.appendChild(clonedContent);
+    // Duplicate content only once
+    if (scrollContainer.children.length < 2) {
+      const clonedContent = content.cloneNode(true) as HTMLDivElement;
+      scrollContainer.appendChild(clonedContent);
+    }
 
-    // Animation function
+    const contentWidth = content.offsetWidth; // ✅ Error should be gone
     let position = 0;
     const scrollSpeed = 1; // pixels per frame
 
     const animate = () => {
       position -= scrollSpeed;
 
-      // Reset position when first copy of content is fully scrolled out
+      // Reset position when fully scrolled
       if (position <= -contentWidth) {
         position = 0;
       }
@@ -41,10 +43,14 @@ const InfiniteScrollText = () => {
   }, []);
 
   return (
-    <div className="container mx-auto mt-10 p-4 text-zinc-300  w-full overflow-hidden">
+    <div className="container mx-auto mt-10 p-4 text-zinc-300 w-full overflow-hidden">
       <p>Everything you need in our marketplace:</p>
       <div className="relative overflow-hidden w-full">
-        <div ref={scrollContainerRef} className="inline-flex whitespace-nowrap">
+        <div
+          ref={scrollContainerRef}
+          className="flex whitespace-nowrap"
+          style={{ willChange: "transform" }}
+        >
           <div ref={contentRef} className="flex items-center space-x-8 px-4">
             <span className="font-medium">Boosted Brix</span>
             <span className="font-medium">Brix Listings</span>
