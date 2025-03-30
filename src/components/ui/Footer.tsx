@@ -11,7 +11,7 @@ export default function Footerbar() {
     <footer className="container mx-auto mt-10">
       <div className="ml-4 flex flex-col border-b-2 border-t-2 border-gray-800 pt-8 text-left text-2xl font-medium text-white md:ml-0 md:flex-row md:justify-between md:pt-4 md:text-xl">
         <div className="uppercase">
-          <h1 className="text-4xl font-bold text-blue">Pages</h1>
+          <h1 className="text-4xl font-bold text-primary-400">Pages</h1>
           <ul className="pt-8 md:pt-4">
             <li className="pb-2">
               <Link href="/" className="hover:text-orange">
@@ -41,7 +41,7 @@ export default function Footerbar() {
           </ul>
         </div>
         <div className="uppercase">
-          <h1 className="pt-8 text-4xl font-bold text-blue md:pt-0">
+          <h1 className="pt-8 text-4xl font-bold text-primary-400 md:pt-0">
             Utility Pages
           </h1>
           <ul className="pt-8 md:pt-4">
@@ -73,7 +73,7 @@ export default function Footerbar() {
           </ul>
         </div>
         <div className="mb-16 md:mb-0">
-          <h1 className="pt-8 text-4xl font-bold text-blue md:pt-0">
+          <h1 className="pt-8 text-4xl font-bold text-primary-400 md:pt-0">
             Subscribe to our Newsletter
           </h1>
           <p className="text-md pt-8 text-white md:pt-4">
@@ -86,7 +86,7 @@ export default function Footerbar() {
                 placeholder="Your email address"
               />
               <div className="button-primary-gradient h-full">
-                <button className="w-full rounded-full bg-neutral-800 px-14 py-3 text-lg font-bold text-secondary-600">
+                <button className="w-full rounded-full bg-neutral-800 px-14 py-3 text-lg font-bold text-primary-400">
                   Subscribe
                 </button>
               </div>
