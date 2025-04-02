@@ -46,6 +46,11 @@ export default function WaitList() {
     setTimeout(() => {
       setShowPopup(true);
     }, 1000);
+
+    setTimeout(() => {
+      window.location.href =
+        "https://www.kickstarter.com/projects/brixpage/146012701";
+    }, 4000);
   };
 
   const handleReCaptchaVerify = (token: string) => {
@@ -65,7 +70,7 @@ export default function WaitList() {
             className={`${jb_mono.className} text-4xl md:text-6xl mt-16 font-bold z-10 text-center `}
           >
             <span className="text-black uppercase">
-              Join the waitlist for early access
+              Back us on KickStater for early access
             </span>
           </h1>
 

@@ -43,7 +43,7 @@ const InfiniteScrollText = () => {
   }, []);
 
   return (
-    <div className="container mx-auto mt-10 p-4 text-zinc-300 w-full overflow-hidden">
+    <div className="container mx-auto  p-4 text-zinc-300 w-full overflow-hidden">
       <p>Everything you need in our marketplace:</p>
       <div className="relative overflow-hidden w-full">
         <div

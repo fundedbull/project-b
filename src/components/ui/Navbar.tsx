@@ -34,8 +34,16 @@ const Navbar = () => {
           <Link href="/">BRIX</Link>
         </div>
 
-        <div className="bg-[#13111a] p-2 rounded-sm w-1/2 text-center">
-          <h1>Update: Alpha v.2 release July 27th 2025 at 11am PST</h1>
+        <div className="bg-[#13111a]  p-2 rounded-sm w-1/2  ">
+          <a
+            href="https://www.kickstarter.com/projects/brixpage/146012701"
+            className=""
+          >
+            Update:{" "}
+            <span className="text-primary-400 underline">
+              Back us on Kickstarter for Early Access
+            </span>
+          </a>
         </div>
 
         {/* Navigation Links */}
@@ -106,7 +114,17 @@ const Navbar = () => {
             <Image src={brix_logo} alt="Brix Logo" width={42} height={42} />
             <span className="text-2xl font-bold ml-2">BRIX</span>
           </div>
-
+          <div className="bg-[#13111a]  p-2 rounded-sm w-1/2  ">
+            <a
+              href="https://www.kickstarter.com/projects/brixpage/146012701"
+              className=""
+            >
+              Update:{" "}
+              <span className="text-primary-400 underline">
+                Back us on Kickstarter for Early Access
+              </span>
+            </a>
+          </div>
           <button
             onClick={() => {
               setIsOpen(!isOpen);
