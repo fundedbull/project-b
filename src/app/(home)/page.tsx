@@ -1,12 +1,12 @@
 import Navbar from "@ui/Navbar";
-import { JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono, Manrope } from "next/font/google";
 import Link from "next/link";
 import Image from "next/image";
 import Footerbar from "@ui/Footer";
 import InfiniteScrollText from "@/components/infinte-scroll-text";
 
 const jb_mono = JetBrains_Mono({ subsets: ["latin"] });
-
+const manrope = Manrope({ subsets: ["latin"] });
 export default function Home() {
   return (
     <main
@@ -26,7 +26,7 @@ export default function Home() {
         <Navbar />
 
         <div className="flex flex-col items-start px-4 mt-0 md:mt-20">
-          <h1 className="text-3xl md:text-6xl lg:w-3/5 uppercase mb-8">
+          <h1 className="text-3xl md:text-6xl lg:w-3/5 uppercase mb-8 flex flex-col">
             The one stop shop for{" "}
             <span className="bg-linear-to-r from-primary-400 via-white via-40% to-60%  to-primary-400 bg-clip-text text-transparent">
               entrepreneurs and creators
@@ -47,7 +47,7 @@ export default function Home() {
       </div>
       <InfiniteScrollText />
 
-      <div className="relative flex flex-col p-4 md:p-0 md:grid md:grid-rows-2 md:grid-cols-2 gap-8 w-fit h-full container mx-auto  md:mt-40">
+      {/* <div className="relative flex flex-col p-4 md:p-0 md:grid md:grid-rows-2 md:grid-cols-2 gap-8 w-fit h-full container mx-auto  md:mt-40">
         <Image
           className="border-3 border-white rounded-xl"
           src="/BRIX_PAGE_MARKETPLACE_DESCRIPTION_2.png"
@@ -119,10 +119,12 @@ export default function Home() {
 
           <div className="absolute -z-10 size-72 -translate-x-24 translate-y-16 rounded-full bg-purple-400 blur-3xl"></div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="flex flex-col items-center px-4 mt-10 bg-[#0a0a14]">
-        <h1 className="text-6xl font-bold">How to Start with Brix</h1>
+      <div className="flex flex-col items-center px-4 mt-20 bg-[#0a0a14]">
+        <h1 className="text-6xl font-bold bg-linear-to-r from-primary-400 via-white via-40% to-60%  to-primary-400 bg-clip-text text-transparent">
+          How to Start with Brix
+        </h1>
 
         <Image
           src="/BRIX_PAGE_STEPS_1-3_3.png"
@@ -132,7 +134,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="flex flex-col items-center justify-center w-full container mx-auto gap-8 p-4">
+      {/* <div className="flex flex-col items-center justify-center w-full container mx-auto gap-8 p-4">
         <h1 className="text-5xl md:text-6xl font-medium md:text-center">
           How we{" "}
           <span className="bg-linear-to-r from-primary-400 font-bold to-green-400 bg-clip-text text-transparent">
@@ -178,24 +180,26 @@ export default function Home() {
           width={1080}
           height={420}
         />
-      </div>
+      </div> */}
 
       <div className="flex flex-col items-center justify-center w-full container mx-auto gap-8 mt-20 p-4">
         <h1 className="text-5xl font-medium">
-          <span className="bg-linear-to-r from-primary-400 font-bold to-green-400 bg-clip-text text-transparent">
+          <span
+            className={` bg-linear-to-r from-primary-400 via-white via-40% to-60%  to-primary-400 bg-clip-text text-transparent`}
+          >
             Exclusive Features
           </span>
         </h1>
-        <p className="text-2xl mt-4 md:text-center text-zinc-300">
+        {/* <p className="text-2xl mt-4 md:text-center text-zinc-300">
           We have studied our competitors. Weighed the Pros and Cons. Performed
           survey&apos;s for feedback, and now we understand the pain points
           consumers and producers face. So when we started building BRIX PAGE we
           knew that we had to provide so much value that it was a no brainer for
           anyone to use our platform.
-        </p>
+        </p> */}
 
         <div className="flex flex-col md:flex-row gap-4">
-          <div className="flex rounded-[2rem] bg-[#1d1a26] text-white p-7 w-full md:w-1/3">
+          <div className="flex rounded-[2rem] bg-[#1d1a26] text-white p-7 w-full md:w-1/3 border-8 border-white/10">
             <div>
               <Image
                 className="h-[60px] w-[60px] rounded-[16px]"
@@ -204,15 +208,17 @@ export default function Home() {
                 width={64}
                 height={64}
               />
-              <h3 className="pt-5 text-left text-xl bg-linear-to-r from-primary-400 font-bold to-green-400 bg-clip-text text-transparent">
+              <h3 className="pt-5 text-left text-xl text-primary-400">
                 Networking
               </h3>
-              <p className="py-4 text-left text-lg font-medium ">
+              <p
+                className={`${manrope.className} py-4 text-left text-lg font-medium`}
+              >
                 Select Industry. Explain Task. Enter Cost. Find a Match.
               </p>
             </div>
           </div>
-          <div className="rounded-[2rem] bg-[#1d1a26] text-white p-7 w-full md:w-1/3">
+          <div className="rounded-[2rem] bg-[#1d1a26] text-white p-7 w-full md:w-1/3 border-8 border-white/10">
             <div>
               <Image
                 className="h-[60px] w-[60px] rounded-[16px]"
@@ -221,16 +227,18 @@ export default function Home() {
                 width={64}
                 height={64}
               />
-              <h3 className="pt-5 text-left text-xl bg-linear-to-r from-primary-400 font-bold to-green-400 bg-clip-text text-transparent">
+              <h3 className="pt-5 text-left text-xl text-primary-400">
                 Boosted BRIX
               </h3>
-              <p className="py-4 text-left text-lg font-medium ">
+              <p
+                className={`${manrope.className} py-4 text-left text-lg font-medium`}
+              >
                 Showcase BRIX Top Of Marketplace. Measure Performance of past
                 BOOST Campaigns.
               </p>
             </div>
           </div>
-          <div className="flex rounded-[2rem] bg-[#1d1a26] text-white p-7 w-full md:w-1/3">
+          <div className="flex rounded-[2rem] bg-[#1d1a26] text-white p-7 w-full md:w-1/3 border-8 border-white/10">
             <div>
               <Image
                 className="h-[60px] w-[60px] rounded-[16px]"
@@ -239,15 +247,39 @@ export default function Home() {
                 width={64}
                 height={64}
               />
-              <h3 className="pt-5 text-left text-xl  bg-linear-to-r from-primary-400 font-bold to-green-400 bg-clip-text text-transparent">
+              <h3 className="pt-5 text-left text-xl  text-primary-400">
                 Automate Tasks
               </h3>
-              <p className="py-4 text-left text-lg font-medium ">
+              <p
+                className={`${manrope.className} py-4 text-left text-lg font-medium`}
+              >
                 Streamline Tasks Such as Messaging, Posting, & Boosting. You can
                 start and stop Automations at any time.
               </p>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col items-center  mt-16">
+        <h1 className="font-medium text-5xl bg-linear-to-r from-primary-400 via-white via-40% to-60%  to-primary-400 bg-clip-text text-transparent">
+          Try PRO+ for $1/month
+        </h1>
+        <p className={`${manrope.className} my-4 text-xl`}>
+          Start your BRIX&apos;s Three Month PRO+ Trial Today
+        </p>
+        <div className="mb-4 mt-4 w-fit">
+          <form className="flex  gap-4  bg-neutral-700 rounded-full">
+            <input
+              className="rounded-full bg-neutral-700 px-4 py-3 font-semibold outline-hidden"
+              placeholder="Your email address"
+            />
+            <div className="button-primary-gradient h-full p-2">
+              <button className="w-full rounded-full bg-neutral-800 px-14 py-3 text-lg font-bold text-primary-400">
+                Get Started
+              </button>
+            </div>
+          </form>
         </div>
       </div>
 
