@@ -49,12 +49,13 @@ export default function Home() {
 
       <div className="relative flex flex-col p-4 md:p-0 md:grid md:grid-rows-2 md:grid-cols-2 gap-8 w-fit h-full container mx-auto  md:mt-40">
         <Image
+          className="border-3 border-white rounded-xl"
           src="/BRIX_PAGE_MARKETPLACE_DESCRIPTION_2.png"
           alt="sign up"
           width={720}
           height={720}
         />
-        <div className="flex flex-col gap-20 ">
+        <div className="relative flex flex-col gap-20 p-12">
           <div className="text-5xl font-medium ">
             <h1 className="bg-linear-to-r from-primary-400 to-green-400 bg-clip-text text-transparent ">
               Creating an Account
@@ -66,9 +67,23 @@ export default function Home() {
             with the best cybersecurity encryption with our Third Party Partner
             Clerk.
           </p>
+          <Image
+            className="absolute top-0 left-0 -z-10 hidden md:block"
+            src="/acc.png"
+            width={720}
+            height={480}
+            alt=""
+          />
         </div>
 
-        <div className="order-last md:order-none flex flex-col gap-20">
+        <div className="relative p-10 order-last md:order-none flex flex-col gap-20">
+          <Image
+            className="absolute top-0 left-0 -z-10 hidden md:block"
+            src="/acc.png"
+            width={720}
+            height={480}
+            alt=""
+          />
           <div className="text-5xl font-medium ">
             <h1 className="bg-linear-to-r from-primary-400 to-green-400 bg-clip-text text-transparent ">
               The Process of Building
@@ -84,20 +99,20 @@ export default function Home() {
           </p>
         </div>
         <Image
-          className=""
+          className="border-3 border-black rounded-xl"
           src="/BUILD_A_BRIX_LAPTOP_IMAGE.png"
           alt="build"
           width={720}
           height={720}
         />
-        <div className="hidden md:block absolute top-1/4 right-1/4  animate-[spin_30s_linear_infinite] -z-10">
+        <div className="hidden  absolute top-1/4 right-1/4  animate-[spin_30s_linear_infinite] -z-10">
           <div className="absolute -z-10 size-72 -translate-x-16 -translate-y-8 rounded-full bg-primary-400 blur-3xl"></div>
 
           <div className="absolute -z-10 size-72 translate-x-24 -translate-y-8 rounded-full bg-green-400 blur-3xl"></div>
 
           <div className="absolute -z-10 size-72 -translate-x-24 translate-y-16 rounded-full bg-purple-400 blur-3xl"></div>
         </div>
-        <div className="hidden md:block absolute bottom-1/3 left-1/4  animate-[spin_30s_linear_infinite] -z-10">
+        <div className="hidden  absolute bottom-1/3 left-1/4  animate-[spin_30s_linear_infinite] -z-10">
           <div className="absolute -z-10 size-72 -translate-x-16 -translate-y-8 rounded-full bg-primary-400 blur-3xl"></div>
 
           <div className="absolute -z-10 size-72 translate-x-24 -translate-y-8 rounded-full bg-green-400 blur-3xl"></div>
